@@ -1,41 +1,68 @@
 import React from 'react';
 import './App.css'; 
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faDatabase as faDatabaseSolid,
+  faCheckSquare, 
+  faTasks,
+  faCodeBranch,
+  faServer,
+  faCode,
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faReact,
+  faAngular,
+  faJira,
+  faSlack,faHtml5 ,faJs,faLinux,  faDocker,faPython,  faBootstrap,faNode,
+  faSass,  faGitAlt
+
+} from '@fortawesome/free-brands-svg-icons';
+import { 
+  faLayerGroup,
+  faCube, 
+  faRobot,
+  faExchangeAlt,
+  faLaptopCode,
+  faDesktop
+} from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
   const skills = [
-    { name: 'JavaScript', icon: 'fab fa-js-square' },
-    { name: 'React.js', icon: 'fab fa-react' },
-    { name: 'Angular', icon: 'fab fa-angular' },
-    { name: 'TypeScript', icon: 'fab fa-js-square' },
-    { name: 'HTML', icon: 'fab fa-html5' },
-    { name: 'CSS', icon: 'fab fa-css3-alt' },
-    { name: 'Node.js', icon: 'fab fa-node-js' },
-    { name: 'Git', icon: 'fab fa-git-alt' },
-    { name: 'Python', icon: 'fab fa-python' },
-    { name: 'MongoDB', icon: 'fas fa-database' },
-    { name: 'SQL', icon: 'fas fa-database' },
-    { name: 'Bootstrap', icon: 'fab fa-bootstrap' },
-    { name: 'Sass', icon: 'fab fa-sass' },
-    { name: 'Jest', icon: 'fas fa-vial' },
-    { name: 'Agile', icon: 'fas fa-tasks' },
-    { name: 'Scrum', icon: 'fas fa-tasks' },
-    { name: 'CI/CD', icon: 'fas fa-code-branch' },
-    { name: 'REST API', icon: 'fas fa-server' },
-    { name: 'Docker', icon: 'fab fa-docker' },
-    { name: 'Linux', icon: 'fab fa-linux' },
-    { name: 'VS Code', icon: 'fas fa-code' },
-    { name: 'Postman', icon: 'fas fa-envelope' },
-    { name: 'Jira', icon: 'fab fa-jira' },
-    { name: 'Slack', icon: 'fab fa-slack' },
-    { name: 'MERN Stack', icon: 'fas fa-layer-group' }, 
-    { name: 'MEAN Stack', icon: 'fas fa-cubes' },
-    { name: 'Generative AI', icon: 'fas fa-robot' }, 
-    { name: 'Software Development', icon: 'fas fa-code' }, 
-    { name: 'Redux.js', icon: 'fas fa-exchange-alt' },
-    { name: 'Web Development', icon: 'fas fa-laptop-code' }, 
-    { name: 'Front-end Development', icon: 'fas fa-desktop' },
+    { name: 'JavaScript',icon: faJs },
+    { name: 'React.js', icon: faReact },
+    { name: 'Angular', icon: faAngular },
+    { name: 'TypeScript'},
+    { name: 'HTML', icon: faHtml5},
+    { name: 'CSS' },
+    { name: 'Node.js',icon: faNode},
+    { name: 'Git', icon: faGitAlt},
+    { name: 'Python', icon: faPython },
+    { name: 'MongoDB', icon: faDatabaseSolid },
+    { name: 'SQL', icon: faDatabaseSolid }, 
+    { name: 'Bootstrap', icon:faBootstrap },
+    { name: 'Sass', icon: faSass },
+    { name: 'Jest', icon: faCheckSquare }, 
+    { name: 'Agile', icon: faTasks },
+    { name: 'Scrum', icon: faTasks },
+    { name: 'CI/CD', icon: faCodeBranch },
+    { name: 'REST API', icon: faServer },
+    { name: 'Docker', icon: faDocker },
+    { name: 'Linux', icon: faLinux },
+    { name: 'VS Code', icon: faCode },
+    { name: 'Postman', icon: faEnvelope },
+    { name: 'Jira', icon: faJira },
+    { name: 'Slack', icon: faSlack },
+    { name: 'MERN Stack', icon: faLayerGroup },
+    { name: 'MEAN Stack', icon: faCube }, 
+    { name: 'Generative AI', icon: faRobot },
+    { name: 'Software Development', icon: faCode },
+    { name: 'Redux.js', icon: faExchangeAlt },
+    { name: 'Web Development', icon: faLaptopCode },
+    { name: 'Front-end Development', icon: faDesktop },
   ];
+
   const [projects, setProjects] = useState([
     { 
       name: 'Bistro Bliss Restaurant', 
@@ -43,16 +70,16 @@ const App = () => {
       Introducing Bistro Bliss, a full-stack web application designed to showcase my skills in both front-end and back-end development.<br>
       <br><strong>Key Technologies:</strong>
         <ul>
-          l>
-          <<li>Front-End: Angular,TypeScript, HTML, CSS   <br>
+          <li>Front-End: Angular,TypeScript, HTML, CSS   <br>
           <li>Back-End: Node.js, Express, MongoDB
         </ul>
         <strong>Features:</strong>
-        <uli>RESTful API for CRUD operations <br>
+        <ul>
+        <li>RESTful API for CRUD operations <br>
           <li>Responsive Design for compatibility across devices<br>
           <li>User Authentication and Authorization
         </ul>
-  
+  <br>
   Check out the <a href="https://mohamedreda22.github.io/ODC-Final-project-Demo/" target="_blank" >GitHub repository</a> for more details.
       `, 
       link:"https://github.com/mohamedreda22/ODC-Final-project-Demo",
@@ -437,15 +464,22 @@ const App = () => {
   const startSlideshow = () => {
     projects.forEach((project, index) => {
       let currentIndex = 0;
-  
-      clearInterval(project.interval);
-  
+
+      // Clear any existing interval for the project
+      if (project.interval) {
+        clearInterval(project.interval);
+      }
+
+      // Start a new interval for this project
       project.interval = setInterval(() => {
         currentIndex = (currentIndex + 1) % project.images.length;
-  
+
         setProjects((prevProjects) => {
           const newProjects = [...prevProjects];
-          newProjects[index].currentImage = project.images[currentIndex];
+          newProjects[index] = {
+            ...newProjects[index],
+            currentImage: project.images[currentIndex]
+          };
           return newProjects;
         });
       }, 1500);
@@ -459,7 +493,7 @@ const App = () => {
         clearInterval(project.interval);
       });
     };
-  }); 
+  },); 
 
   const downloadCV = () => {
     try {
@@ -481,6 +515,7 @@ const App = () => {
     alert('Thank you for your message! We will get back to you soon.');
     event.target.reset();
   };
+
   return (
     <div className="App">
     <nav>
@@ -504,7 +539,8 @@ const App = () => {
             <button className="cv-button" onClick={downloadCV}>Download CV</button>
           </div>
           <div className="hero-image">
-            <img src="gp_photo.jpg" alt="Mohamed Reda" /> 
+            <img src={`${process.env.PUBLIC_URL}/gp_photo.jpg`} alt="Mohamed Reda" /> 
+            
           </div>
         </div>
       </section>
@@ -523,19 +559,18 @@ const App = () => {
       </section>
 
       <section className="skills" id="skills">
-  <h1>Skills</h1>
-  <div className="skills-grid">
-    {skills.map((skill, index) => {
-      return (
-        <div className="skill-item" key={index}>
-          <span>
-            <i className={skill.icon}></i>
-            {skill.name}
-          </span>
+        <h1>Skills</h1>
+        <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <div className="skill-item" key={index}>
+          <span>  
+            <FontAwesomeIcon icon={skill.icon} /> 
+            &nbsp; {skill.name}
+            </span>
+          </div>
+        ))}
         </div>
-      );
-    })}
-  </div>
+
       </section>
 
       <section className="education-section" id="education">
@@ -543,7 +578,8 @@ const App = () => {
           {education.map((edu, index) => {
             return (
               <div className="education-item" key={index}>
-                <img src={edu.logo} alt="Helwan University Logo" className="university-logo" />
+                <img src={`${process.env.PUBLIC_URL}/${edu.logo}`} 
+                alt="Helwan University Logo" className="university-logo" />
                 <div className="education-details">
                   <h3>{edu.institution}</h3>
                   <p className="degree">{edu.degree}</p>
@@ -558,14 +594,17 @@ const App = () => {
           })}
     </section>
 
-<section className="projects" id="projects">
+    <section className="projects" id="projects">
   <h1 style={{ marginTop: '-10px' }}>My Projects</h1>
   <div className="projects-container">
     {projects.map((project, index) => (
       <div className="project-item" key={index}>
-        {/* Slideshow for multiple images */}
         <div className="slideshow-container">
-          <img className="slideshow-image" src={project.currentImage} alt="Project" />
+          <img 
+            className="slideshow-image" 
+            src={`${process.env.PUBLIC_URL}/${project.currentImage}`} 
+            alt={`${project.name} Image`} 
+          />
         </div>
         <div className="project-info">
           <h2>{project.name}</h2>
@@ -577,6 +616,7 @@ const App = () => {
     ))}
   </div>
 </section>
+
 
 <section className="experience" id="experience" style={{ marginTop: '-100px' }}>
   <h1>My Experiences</h1>
@@ -605,7 +645,11 @@ const App = () => {
   <h1>Certifications</h1>
   {certifications.map((cert, index) => (
     <div className="certification-item" key={index}>
-      <img src={cert.logo} alt={`${cert.issuer} Logo`} className="certification-logo" />
+      <img 
+        src={`${process.env.PUBLIC_URL}/${cert.logo}`} 
+        alt={`${cert.issuer} Logo`} 
+        className="certification-logo" 
+      />
       <div className="certification-details">
         <h3 className="certification-title">{cert.title}</h3>
         <p className="certification-issuer">Issued by {cert.issuer}</p>
@@ -632,16 +676,16 @@ const App = () => {
       <footer>
         <div className="social-links">
         <a href="https://github.com/mohamedreda22" target="_blank" aria-label="GitHub Profile" rel="noreferrer">
-          <img src="github.png" className="icon" alt='GitHub'/>
+          <img src={`${process.env.PUBLIC_URL}/github.png`} className="icon" alt='GitHub'/>
         </a>
         <a href="https://www.linkedin.com/in/swe-mohamed-reda/" target="_blank" aria-label="LinkedIn Profile" rel="noreferrer">
-          <img src="linkedin.png" className="icon" alt='LinkedIn'/>
+          <img src={`${process.env.PUBLIC_URL}/linkedin.png`} className="icon" alt='LinkedIn'/>
         </a>
         <a href="mailto:mohamedreda.dev@gmail.com?subject=Contact%20from%20Website&body=Hello%20Mohamed%2C%0D%0A" rel="noreferrer">
-          <img src="gmail.jpg" className="icon" alt="Email Icon"/>
+          <img src={`${process.env.PUBLIC_URL}/gmail.jpg`} className="icon" alt="Email Icon"/>
         </a>
         <a href="https://wa.me/201155921429" target="_blank" aria-label="WhatsApp" rel="noreferrer">
-          <img src="whatsapp.png" className="icon" alt="WhatsApp Icon"/>
+          <img src={`${process.env.PUBLIC_URL}/whatsapp.png`} className="icon" alt="WhatsApp Icon"/>
         </a>
         </div>
         <p>&copy; 2025 Mohamed Reda. All rights reserved.</p>
