@@ -454,13 +454,12 @@ const App = () => {
   useEffect(() => {
     startSlideshow();
     
-    // Cleanup function to clear intervals on component unmount
     return () => {
       projects.forEach((project) => {
         clearInterval(project.interval);
       });
     };
-  }); // Empty dependency array to run only on mount
+  }); 
 
   const downloadCV = () => {
     try {
@@ -505,7 +504,7 @@ const App = () => {
             <button className="cv-button" onClick={downloadCV}>Download CV</button>
           </div>
           <div className="hero-image">
-            <img src="gp photo.jpg" alt="Mohamed Reda" /> 
+            <img src="gp_photo.jpg" alt="Mohamed Reda" /> 
           </div>
         </div>
       </section>
