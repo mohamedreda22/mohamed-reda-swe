@@ -1,38 +1,490 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: white;
+  margin: 0;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #151515;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+/* Hero Section Styles */
+.hero {
+  background: linear-gradient(135deg, #0d0d0d 50%, #532db4 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-info {
+  flex: 1;
+}
+
+.hero-info h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-info p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cv-button {
+  padding: 10px 20px;
+  background-color: #f80070;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cv-button:hover {
+  background-color: #c8005e;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-info h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-info p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+
+/* About Section */
+.about {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #151515;
+}
+
+.about h1 {
+  font-size: 40px;
+  color: #ff0099;
+}
+
+.about p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Skills Section */
+.skills {
+  padding: 80px 20px;
+  background-color: #0d0d0d;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.skills h1 {
+  font-size: 40px;
+  color: #ff0099;
+  opacity: 0;
+  animation: fadeIn 1s forwards; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Animation for skill items */
+.skills-grid .skill-item {
+  margin-top: 10px;
+  opacity: 0; 
+  transform: translateX(30px); 
+  animation: moveIn 0.9s forwards; 
+  animation-delay: calc((var(--item-index) + 1) * 0.2s); 
+}
+
+/* Apply the index to each skill item for staggered animation */
+.skills-grid .skill-item:nth-child(n) {
+  --item-index: calc(n - 1); 
+}
+
+.skills-grid span {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  font-size: 16px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect for skill items */
+.skills-grid span:hover {
+  transform: scale(1.1) translateY(5px); 
+  background-color: rgba(240, 5, 5, 0.3); 
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1; 
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes moveIn {
+  to {
+    opacity: 1; /* Fade in to fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+
+.education-section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #202020; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+}
+.education-section h1{
+  font-size: 40px;
+  color: #ff0099;
+  text-align: center;
+}
+.education-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 15px; /* Spacing between education items */
+}
+
+.university-logo {
+  width: 80px; /* Set width for logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 15px; /* Space between logo and text */
+}
+
+.education-details {
+  flex: 1; /* Allow the details to take up remaining space */
+}
+
+
+.degree {
+  font-weight: bold; /* Emphasize degree */
+  font-size: 18px; /* Degree size */
+}
+
+.location, .date, .grade, .major, .minor {
+  font-size: 14px; /* Text size for details */
+}
+
+/* Projects Section */
+.projects {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #151515;
+}
+.projects h1{
+  font-size: 40px;
+  color: #ff0099;
+}
+
+.project-item {
+  background-color: #202020;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  text-align: center;
+}
+.project-item .project-info{
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+}
+
+.project-item img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit:contain;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ff0099;
+}
+
+.project-item p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+}
+
+.project-item a {
+  text-decoration: none;
+  color: #ff0099;
+  font-weight: 700;
+}
+
+.project-item a:hover {
+  color: #ffd700;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slideshow-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .project-item {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .project-item img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.experience {
+  padding: 20px;
+  text-align: center;
+}
+.experience h1{
+  font-size: 40px;
+  color: #ff0099;
+  text-align: center;
+}
+
+.experience-list {
+  margin-top: 20px;
+}
+
+.experience-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #202020;
+}
+
+.experience-item h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #ff0099;
+}
+
+.experience-item h3 {
+  margin: 5px 0;
+  font-weight: normal;
+}
+
+.experience-item p {
+  margin: 10px 0;
+}
+
+.experience-item ul {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+.certifications-section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #202020; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  
+}
+.certifications-section h1 {
+  font-size: 40px;
+  color: #ff0099;
+  text-align: center;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Spacing between certifications */
+}
+
+.certification-logo {
+  width: 50px; /* Set width for logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 15px; /* Space between logo and text */
+}
+
+.certification-details {
+  flex: 1; /* Allow the details to take up remaining space */
+}
+
+
+.certification-title {
+  font-weight: bold; /* Emphasize title */
+  font-size: 18px; /* Title size */
+}
+
+.certification-issuer, .certification-issued-date, .credential-id {
+  font-size: 14px; 
+}
+
+.certification-skills {
+  font-size: 14px; /* Text size for skills */
+  color: #ff0099; /* Lighter gray for skills */
+}
+
+
+/* Contact Section */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+}
+.contact h1{
+  font-size: 40px;
+  color: #ff0099;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact input, .contact textarea {
+  width: 80%;
+  max-width: 400px;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background-color: #ff0099;
   color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Footer with Social Links */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #151515;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer .social-links {
+  margin-bottom: 10px;
 }
+
+footer .social-links a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+footer .social-links a:hover {
+  color: #ffd700; 
+}
+
+footer p {
+  font-size: 14px;
+}
+
+footer .social-links .icon{
+  height: 30px;
+  width: 30px;
+
+}
+ 
+  @media (max-width: 768px) {
+    .skills-grid {
+      flex-direction: column;
+    }
+  }
+  
