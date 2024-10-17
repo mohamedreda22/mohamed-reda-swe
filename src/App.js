@@ -641,6 +641,9 @@ const App = () => {
         <a href="mailto:mohamedreda.dev@gmail.com?subject=Contact%20from%20Website&body=Hello%20Mohamed%2C%0D%0A">
           <img src="gmail.jpg" class="icon" alt="Email Icon"/>
         </a>
+        <a href="https://wa.me/201155921429" target="_blank" aria-label="WhatsApp">
+          <img src="whatsapp.png" class="icon" alt="WhatsApp Icon"/>
+        </a>
         </div>
         <p>&copy; 2025 Mohamed Reda. All rights reserved.</p>
         </footer>
