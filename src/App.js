@@ -2,66 +2,44 @@ import React from 'react';
 import './App.css'; 
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faDatabase as faDatabaseSolid,
-  faCheckSquare, 
-  faTasks,
-  faCodeBranch,
-  faServer,
-  faCode,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faReact,
-  faAngular,
-  faJira,
-  faSlack,faHtml5 ,faJs,faLinux,  faDocker,faPython,  faBootstrap,faNode,
-  faSass,  faGitAlt
-
-} from '@fortawesome/free-brands-svg-icons';
-import { 
-  faLayerGroup,
-  faCube, 
-  faRobot,
-  faExchangeAlt,
-  faLaptopCode,
-  faDesktop
-} from '@fortawesome/free-solid-svg-icons';
+import { faJsSquare, faReact, faAngular, faHtml5, faCss3Alt, faNodeJs, faGitAlt } from '@fortawesome/free-brands-svg-icons'; // Icons from 'brands'
+import { faDatabase, faTasks, faCodeBranch, faServer, faCode, faEnvelope, faLayerGroup, faCubes, faRobot, faLaptopCode, faDesktop, faExchangeAlt, faVial } from '@fortawesome/free-solid-svg-icons'; // Icons from 'solid'
+import {faPython,faJira,faSlack} from '@fortawesome/free-brands-svg-icons';
 
 const App = () => {
   const skills = [
-    { name: 'JavaScript',icon: faJs },
+    { name: 'JavaScript', icon: faJsSquare },
     { name: 'React.js', icon: faReact },
+    { name: 'Redux.js', icon: faExchangeAlt },
     { name: 'Angular', icon: faAngular },
-    { name: 'TypeScript'},
-    { name: 'HTML', icon: faHtml5},
-    { name: 'CSS' },
-    { name: 'Node.js',icon: faNode},
-    { name: 'Git', icon: faGitAlt},
+    { name: 'TypeScript', icon: faJsSquare },
+    { name: 'HTML', icon: faHtml5 },
+    { name: 'CSS', icon: faCss3Alt },
+    { name: 'Node.js', icon: faNodeJs },
+    { name: 'Git', icon: faGitAlt },
     { name: 'Python', icon: faPython },
-    { name: 'MongoDB', icon: faDatabaseSolid },
-    { name: 'SQL', icon: faDatabaseSolid }, 
-    { name: 'Bootstrap', icon:faBootstrap },
-    { name: 'Sass', icon: faSass },
-    { name: 'Jest', icon: faCheckSquare }, 
+    { name: 'MongoDB', icon: faDatabase },
+    { name: 'SQL', icon: faDatabase },
+    { name: 'Bootstrap', icon: faCodeBranch },
+    { name: 'Sass', icon: faCss3Alt },
+    { name: 'Jest', icon: faVial },
     { name: 'Agile', icon: faTasks },
     { name: 'Scrum', icon: faTasks },
     { name: 'CI/CD', icon: faCodeBranch },
     { name: 'REST API', icon: faServer },
-    { name: 'Docker', icon: faDocker },
-    { name: 'Linux', icon: faLinux },
+    { name: 'Docker', icon: faCode },
+    { name: 'Linux', icon: faCode },
     { name: 'VS Code', icon: faCode },
     { name: 'Postman', icon: faEnvelope },
     { name: 'Jira', icon: faJira },
     { name: 'Slack', icon: faSlack },
     { name: 'MERN Stack', icon: faLayerGroup },
-    { name: 'MEAN Stack', icon: faCube }, 
+    { name: 'MEAN Stack', icon: faCubes },
     { name: 'Generative AI', icon: faRobot },
-    { name: 'Software Development', icon: faCode },
-    { name: 'Redux.js', icon: faExchangeAlt },
     { name: 'Web Development', icon: faLaptopCode },
     { name: 'Front-end Development', icon: faDesktop },
   ];
+  
 
   const [projects, setProjects] = useState([
     { 
@@ -555,8 +533,7 @@ const App = () => {
         {skills.map((skill, index) => (
           <div className="skill-item" key={index}>
           <span>  
-            <FontAwesomeIcon icon={skill.icon} /> 
-            &nbsp; {skill.name}
+          {skill.icon && <FontAwesomeIcon icon={skill.icon} />}            &nbsp; {skill.name}
             </span>
           </div>
         ))}
