@@ -458,22 +458,16 @@ const App = () => {
       logo: "linkedin.png" 
     }
   ];
+  // useEffect to handle the slideshow
   useEffect(() => {
-    startSlideshow();
-  });
-  const startSlideshow = () => {
-    projects.forEach((project, index) => {
+    const intervals = projects.map((project, index) => {
       let currentIndex = 0;
-
-      // Clear any existing interval for the project
-      if (project.interval) {
-        clearInterval(project.interval);
-      }
-
-      // Start a new interval for this project
-      project.interval = setInterval(() => {
+      
+      // Start a new interval for each project
+      return setInterval(() => {
         currentIndex = (currentIndex + 1) % project.images.length;
 
+        // Update the project's currentImage based on the interval
         setProjects((prevProjects) => {
           const newProjects = [...prevProjects];
           newProjects[index] = {
@@ -482,18 +476,15 @@ const App = () => {
           };
           return newProjects;
         });
-      }, 1500);
+      }, 1500); // Change image every 1.5 seconds
     });
-  };
-  useEffect(() => {
-    startSlideshow();
-    
+
+    // Cleanup function to clear intervals when component unmounts
     return () => {
-      projects.forEach((project) => {
-        clearInterval(project.interval);
-      });
+      intervals.forEach((interval) => clearInterval(interval));
     };
-  },); 
+  }, []);
+
 
   const downloadCV = () => {
     try {
