@@ -433,7 +433,7 @@ const App = () => {
   ];
   useEffect(() => {
     startSlideshow();
-  }, []);
+  });
   const startSlideshow = () => {
     projects.forEach((project, index) => {
       let currentIndex = 0;
@@ -460,7 +460,7 @@ const App = () => {
         clearInterval(project.interval);
       });
     };
-  }, []); // Empty dependency array to run only on mount
+  }); // Empty dependency array to run only on mount
 
   const downloadCV = () => {
     try {
@@ -485,8 +485,8 @@ const App = () => {
   return (
     <div className="App">
     <nav>
-        <div class="logo">Mohamed Reda</div>
-        <div class="nav-links">
+        <div className="logo">Mohamed Reda</div>
+        <div className="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
@@ -510,7 +510,7 @@ const App = () => {
         </div>
       </section>
 
-        <section class="about" id="about">
+        <section className="about" id="about">
           <h1>About Me</h1>
           <p>I am a software engineer specializing in programming and networks,
              particularly focusing on React.js development.
@@ -566,13 +566,13 @@ const App = () => {
       <div className="project-item" key={index}>
         {/* Slideshow for multiple images */}
         <div className="slideshow-container">
-          <img className="slideshow-image" src={project.currentImage} alt="Project image" />
+          <img className="slideshow-image" src={project.currentImage} alt="Project" />
         </div>
         <div className="project-info">
           <h2>{project.name}</h2>
           <p dangerouslySetInnerHTML={{ __html: project.description }}></p>
           <p><strong>Date:</strong> {project.date}</p>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
+          <a href={project.link} target="_blank" rel="noreferrer">View Project</a>
         </div>
       </div>
     ))}
@@ -632,17 +632,17 @@ const App = () => {
 
       <footer>
         <div className="social-links">
-        <a href="https://github.com/mohamedreda22" target="_blank" aria-label="GitHub Profile">
-          <img src="github.png" class="icon"/>
+        <a href="https://github.com/mohamedreda22" target="_blank" aria-label="GitHub Profile" rel="noreferrer">
+          <img src="github.png" className="icon" alt='GitHub'/>
         </a>
-        <a href="https://www.linkedin.com/in/swe-mohamed-reda/" target="_blank" aria-label="LinkedIn Profile">
-          <img src="linkedin.png" class="icon"/>
+        <a href="https://www.linkedin.com/in/swe-mohamed-reda/" target="_blank" aria-label="LinkedIn Profile" rel="noreferrer">
+          <img src="linkedin.png" className="icon" alt='LinkedIn'/>
         </a>
-        <a href="mailto:mohamedreda.dev@gmail.com?subject=Contact%20from%20Website&body=Hello%20Mohamed%2C%0D%0A">
-          <img src="gmail.jpg" class="icon" alt="Email Icon"/>
+        <a href="mailto:mohamedreda.dev@gmail.com?subject=Contact%20from%20Website&body=Hello%20Mohamed%2C%0D%0A" rel="noreferrer">
+          <img src="gmail.jpg" className="icon" alt="Email Icon"/>
         </a>
-        <a href="https://wa.me/201155921429" target="_blank" aria-label="WhatsApp">
-          <img src="whatsapp.png" class="icon" alt="WhatsApp Icon"/>
+        <a href="https://wa.me/201155921429" target="_blank" aria-label="WhatsApp" rel="noreferrer">
+          <img src="whatsapp.png" className="icon" alt="WhatsApp Icon"/>
         </a>
         </div>
         <p>&copy; 2025 Mohamed Reda. All rights reserved.</p>
