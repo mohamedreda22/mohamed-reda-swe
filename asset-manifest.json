@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mohamed-reda-swe/static/css/main.54db47fb.css",
-    "main.js": "/mohamed-reda-swe/static/js/main.3cfde445.js",
+    "main.js": "/mohamed-reda-swe/static/js/main.e37fff22.js",
     "static/js/453.39354cbc.chunk.js": "/mohamed-reda-swe/static/js/453.39354cbc.chunk.js",
     "index.html": "/mohamed-reda-swe/index.html",
     "main.54db47fb.css.map": "/mohamed-reda-swe/static/css/main.54db47fb.css.map",
-    "main.3cfde445.js.map": "/mohamed-reda-swe/static/js/main.3cfde445.js.map",
+    "main.e37fff22.js.map": "/mohamed-reda-swe/static/js/main.e37fff22.js.map",
     "453.39354cbc.chunk.js.map": "/mohamed-reda-swe/static/js/453.39354cbc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.54db47fb.css",
-    "static/js/main.3cfde445.js"
+    "static/js/main.e37fff22.js"
   ]
 }
