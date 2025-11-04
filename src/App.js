@@ -372,7 +372,7 @@ const App = () => {
       title: "What Is Generative AI?",
       issuer: "LinkedIn",
       issuedDate: "Oct 2024",
-      skills: ["Generative AI", "Artificial Intelligence (AI)"],
+      skills: ["Generative AI", "Artificial Intelligence (AI)" ],
       logo: "linkedin.png",
     },
     {
