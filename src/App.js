@@ -64,6 +64,43 @@ const App = () => {
 
   const [projects, setProjects] = useState([
     {
+      name: "Casual Bazaar – E-Commerce Platform",
+      description: `
+    Casual Bazaar is a modern e-commerce web application built to demonstrate full-stack development capabilities.<br><br>
+    <strong>Key Technologies:</strong>
+    <ul>
+      <li>Front-End: React.js, TypeScript, HTML, CSS</li>
+      <li>Back-End: Node.js, Express, MongoDB</li>
+      <li>State Management: Redux Toolkit</li>
+    </ul>
+    <strong>Features:</strong>
+    <ul>
+      <li>Product Catalog with search and filter functionality</li>
+      <li>Shopping Cart with Add/Remove/Update items</li>
+      <li>User Authentication and Authorization</li>
+      <li>Responsive Design for desktop and mobile</li>
+      <li>RESTful API integration for CRUD operations</li>
+    </ul>
+    <br>
+    Check out the <a href="https://github.com/mohamedreda22/casual-bazaar" target="_blank">GitHub repository</a> for more details.
+  `,
+      link: "https://github.com/mohamedreda22/casual-bazaar",
+      date: "JAN-2025",
+      images: [
+        "casual1.png",
+        "casual2.png",
+        "casual3.png",
+        "casual4.png",
+        "casual5.png",
+        "casual6.png",
+        "casual7.png",
+        "casual8.png",
+        "casual9.png"
+      ],
+      currentImage: "casual1.png",
+    },
+
+    {
       name: "Bistro Bliss Restaurant",
       description: `
       Introducing Bistro Bliss, a full-stack web application designed to showcase my skills in both front-end and back-end development.<br>
@@ -592,30 +629,34 @@ const App = () => {
         </div>
       </section>
 
-      <section
-        className="experience"
-        id="experience"
-        style={{ marginTop: "-100px" }}
-      >
-        <h1>My Experiences</h1>
+      <section className="experience" id="experience">
+        <h1>Experience & Career Journey</h1>
+
         <div className="experience-list">
           {experiences.map((exp, index) => (
-            <div className="experience-item" key={index}>
-              <h2>{exp.title}</h2>
-              <h3>
-                {exp.company} - {exp.type}
-              </h3>
-              <p>
-                <strong>Duration:</strong> {exp.duration}
-              </p>
-              <p>{exp.description}</p>
+            <div
+              className={`experience-item ${
+                exp.type.toLowerCase().includes("military")
+                  ? "military"
+                  : exp.type.toLowerCase().includes("career break")
+                  ? "career-break"
+                  : "tech"
+              }`}
+              key={index}
+            >
+              <h2 className="experience-title">{exp.title}</h2>
+              <h3 className="experience-company">{exp.company}</h3>
+              <p className="experience-duration">{exp.duration}</p>
+              <p className="experience-description">{exp.description}</p>
+
               {exp.skills && exp.skills.length > 0 && (
-                <ul>
-                  <strong>Skills:</strong>
-                  {exp.skills.map((skill, skillIndex) => (
-                    <li key={skillIndex}>{skill}</li>
+                <div className="experience-skills">
+                  {exp.skills.map((skill, i) => (
+                    <span className="skill-badge" key={i}>
+                      {skill}
+                    </span>
                   ))}
-                </ul>
+                </div>
               )}
             </div>
           ))}

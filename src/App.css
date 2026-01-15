@@ -329,46 +329,106 @@ nav a {
   }
 }
 .experience {
-  padding: 20px;
-  text-align: center;
+  padding: 60px 20px;
+  background: #121212;
 }
+
 .experience h1 {
-  font-size: 40px;
+  font-size: 42px;
   color: #ff0099;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .experience-list {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+/* Card Styles */
 .experience-item {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #202020;
+  background: #1e1e1e;
+  padding: 25px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.experience-item h2 {
-  margin: 0;
-  font-size: 1.5em;
+.experience-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 0, 153, 0.2);
+}
+
+.experience-title {
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.experience-company {
+  font-size: 16px;
+  color: #aaaaaa;
+  margin-bottom: 6px;
+}
+
+.experience-duration {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.experience-description {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Skills Badges */
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.skill-badge {
+  background: rgba(255, 0, 153, 0.15);
   color: #ff0099;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
-.experience-item h3 {
-  margin: 5px 0;
-  font-weight: normal;
+/* Type-based highlights */
+.experience-item.military {
+  border-left: 4px solid #00ffcc;
 }
 
-.experience-item p {
-  margin: 10px 0;
+.experience-item.career-break {
+  border-left: 4px solid #ffaa00;
 }
 
-.experience-item ul {
-  margin-top: 10px;
-  list-style-type: none;
-  padding: 0;
+.experience-item.tech {
+  border-left: 4px solid #ff0099;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 20px;
+  }
+
+  .experience-title {
+    font-size: 20px;
+  }
+
+  .experience-description {
+    font-size: 14px;
+  }
+}
+
 
 .certifications-section {
   margin: 20px;
