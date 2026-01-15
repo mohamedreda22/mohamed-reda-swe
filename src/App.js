@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AnimatedTimeline from "./AnimatedTimeline.js";
 import {
   faJsSquare,
   faReact,
@@ -629,39 +630,7 @@ const App = () => {
         </div>
       </section>
 
-      <section className="experience" id="experience">
-        <h1>Experience & Career Journey</h1>
-
-        <div className="experience-list">
-          {experiences.map((exp, index) => (
-            <div
-              className={`experience-item ${
-                exp.type.toLowerCase().includes("military")
-                  ? "military"
-                  : exp.type.toLowerCase().includes("career break")
-                  ? "career-break"
-                  : "tech"
-              }`}
-              key={index}
-            >
-              <h2 className="experience-title">{exp.title}</h2>
-              <h3 className="experience-company">{exp.company}</h3>
-              <p className="experience-duration">{exp.duration}</p>
-              <p className="experience-description">{exp.description}</p>
-
-              {exp.skills && exp.skills.length > 0 && (
-                <div className="experience-skills">
-                  {exp.skills.map((skill, i) => (
-                    <span className="skill-badge" key={i}>
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+      <AnimatedTimeline experiences={experiences} />
 
       <section className="certifications-section" id="certifications">
         <h1>Certifications</h1>

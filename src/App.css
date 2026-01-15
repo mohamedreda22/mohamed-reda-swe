@@ -302,6 +302,51 @@ nav a {
   color: #ffd700;
 }
 
+.timeline-item,
+.project-item {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+  color: #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover,
+.project-item:hover {
+  cursor: pointer;
+}
+
+.skill-badge {
+  background: rgba(255, 0, 153, 0.15);
+  color: #ff0099;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-right: 5px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+/* Filter Buttons */
+.filter-btn {
+  background: #1e1e1e;
+  color: #ddd;
+  border: 2px solid #555;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #ff0099;
+  color: #fff;
+  border-color: #ff0099;
+}
+
+
 .slideshow-container {
   position: relative;
   width: 100%;
