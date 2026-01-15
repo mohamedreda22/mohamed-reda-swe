@@ -551,15 +551,14 @@ const App = () => {
       <section className="about" id="about">
         <h1>About Me</h1>
         <p>
-          I am a software engineer specializing in programming and networks,
-          particularly focusing on React.js development. I recently graduated
-          from Helwan University with a degree in Information Systems, where I
-          dedicated myself to attaining a high level of professionalism in the
-          field. My graduation project, the University Newsline System,
-          simplifies communication across the university community by enhancing
-          transparency, engagement, and information dissemination. This
-          platform, tailored for students,faculty, and administrators, offers
-          diverse features for streamlined communication.
+          Software Engineer specializing in Front-End and Full-Stack Web
+          Development with strong expertise in React.js and modern JavaScript
+          ecosystems. Experienced in building scalable web applications,
+          including e-commerce platforms, dashboards, and secure authentication
+          systems using MERN and MEAN stacks. Demonstrated leadership as a
+          graduation project team leader with hands-on experience in real-world
+          projects. Available for full-time roles starting March 2026 after
+          completing military service.
         </p>
       </section>
 
