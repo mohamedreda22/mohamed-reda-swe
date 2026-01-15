@@ -488,7 +488,7 @@ const App = () => {
       }, 1500); // Change image every 1.5 seconds
     });
 
-    // Cleanup function to clear intervals when component unmounts
+    // Cleanup function to clear intervals when component unmounts //test commit
     return () => {
       intervals.forEach((interval) => clearInterval(interval));
     };
