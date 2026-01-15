@@ -459,8 +459,8 @@ const App = () => {
   const downloadCV = () => {
     try {
       const link = document.createElement("a");
-      link.href = "MohamedReda_Resume_2024_ATS.docx";
-      link.download = "MohamedReda_Resume_2024_ATS.docx";
+      link.href = "Mohamed Reda Ismail_TEST.pdf";
+      link.download = "Mohamed Reda Ismail_TEST.pdf";
       link.click();
     } catch (error) {
       console.error("Download failed", error);
