@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #0d0d0d;
   color: white;
   margin: 0;
@@ -101,21 +101,20 @@ nav a {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .hero-info h1 {
     font-size: 2.5rem;
   }
-  
+
   .hero-info p {
     font-size: 1.2rem;
   }
-  
+
   .hero-image img {
     width: 200px;
     height: 200px;
   }
 }
-
 
 /* About Section */
 .about {
@@ -145,7 +144,7 @@ nav a {
   font-size: 40px;
   color: #ff0099;
   opacity: 0;
-  animation: fadeIn 1s forwards; 
+  animation: fadeIn 1s forwards;
 }
 
 .skills-grid {
@@ -158,15 +157,15 @@ nav a {
 /* Animation for skill items */
 .skills-grid .skill-item {
   margin-top: 10px;
-  opacity: 0; 
-  transform: translateX(30px); 
-  animation: moveIn 0.9s forwards; 
-  animation-delay: calc((var(--item-index) + 1) * 0.2s); 
+  opacity: 0;
+  transform: translateX(30px);
+  animation: moveIn 0.9s forwards;
+  animation-delay: calc((var(--item-index) + 1) * 0.2s);
 }
 
 /* Apply the index to each skill item for staggered animation */
 .skills-grid .skill-item:nth-child(n) {
-  --item-index: calc(n - 1); 
+  --item-index: calc(n - 1);
 }
 
 .skills-grid span {
@@ -179,14 +178,14 @@ nav a {
 
 /* Hover effect for skill items */
 .skills-grid span:hover {
-  transform: scale(1.1) translateY(5px); 
-  background-color: rgba(240, 5, 5, 0.3); 
+  transform: scale(1.1) translateY(5px);
+  background-color: rgba(240, 5, 5, 0.3);
 }
 
 /* Keyframes for animations */
 @keyframes fadeIn {
   to {
-    opacity: 1; 
+    opacity: 1;
   }
 }
 
@@ -197,7 +196,6 @@ nav a {
   }
 }
 
-
 .education-section {
   margin: 20px;
   padding: 20px;
@@ -206,7 +204,7 @@ nav a {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: center;
 }
-.education-section h1{
+.education-section h1 {
   font-size: 40px;
   color: #ff0099;
   text-align: center;
@@ -228,13 +226,16 @@ nav a {
   flex: 1; /* Allow the details to take up remaining space */
 }
 
-
 .degree {
   font-weight: bold; /* Emphasize degree */
   font-size: 18px; /* Degree size */
 }
 
-.location, .date, .grade, .major, .minor {
+.location,
+.date,
+.grade,
+.major,
+.minor {
   font-size: 14px; /* Text size for details */
 }
 
@@ -244,7 +245,7 @@ nav a {
   text-align: center;
   background-color: #151515;
 }
-.projects h1{
+.projects h1 {
   font-size: 40px;
   color: #ff0099;
 }
@@ -260,7 +261,7 @@ nav a {
   align-items: center;
   text-align: center;
 }
-.project-item .project-info{
+.project-item .project-info {
   flex: 1;
   text-align: left;
   padding: 20px;
@@ -273,7 +274,7 @@ nav a {
 .project-item img {
   max-width: 100%;
   max-height: 500px;
-  object-fit:contain;
+  object-fit: contain;
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -331,7 +332,7 @@ nav a {
   padding: 20px;
   text-align: center;
 }
-.experience h1{
+.experience h1 {
   font-size: 40px;
   color: #ff0099;
   text-align: center;
@@ -368,58 +369,105 @@ nav a {
   list-style-type: none;
   padding: 0;
 }
+
 .certifications-section {
   margin: 20px;
-  padding: 20px;
-  background-color: #202020; /* Light background color */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  
+  padding: 40px 20px;
+  background-color: #202020;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 .certifications-section h1 {
   font-size: 40px;
   color: #ff0099;
   text-align: center;
+  margin-bottom: 40px;
 }
 
+/* Card */
 .certification-item {
   display: flex;
-  align-items: center;
-  margin-bottom: 15px; /* Spacing between certifications */
+  align-items: flex-start;
+  gap: 18px;
+  background: #181818;
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.certification-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 0, 153, 0.15);
+}
+
+/* Logo */
 .certification-logo {
-  width: 50px; /* Set width for logo */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 15px; /* Space between logo and text */
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 
+/* Content */
 .certification-details {
-  flex: 1; /* Allow the details to take up remaining space */
+  flex: 1;
 }
 
-
+/* Title */
 .certification-title {
-  font-weight: bold; /* Emphasize title */
-  font-size: 18px; /* Title size */
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 6px;
 }
 
-.certification-issuer, .certification-issued-date, .credential-id {
-  font-size: 14px; 
+/* Meta info */
+.certification-issuer,
+.certification-issued-date {
+  font-size: 14px;
+  color: #aaaaaa;
 }
 
+.certification-meta {
+  margin-bottom: 12px;
+}
+
+/* Skills as badges */
 .certification-skills {
-  font-size: 14px; /* Text size for skills */
-  color: #ff0099; /* Lighter gray for skills */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
+.certification-skills span,
+.skill-badge {
+  background: rgba(255, 0, 153, 0.15);
+  color: #ff0099;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Included certificates */
+.certification-includes {
+  padding-left: 18px;
+  font-size: 14px;
+  color: #dddddd;
+}
+
+.certification-includes li {
+  margin-bottom: 4px;
+}
 
 /* Contact Section */
 .contact {
   padding: 80px 20px;
   text-align: center;
 }
-.contact h1{
+.contact h1 {
   font-size: 40px;
   color: #ff0099;
 }
@@ -430,7 +478,8 @@ nav a {
   align-items: center;
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
   width: 80%;
   max-width: 400px;
   padding: 15px;
@@ -469,22 +518,20 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-  color: #ffd700; 
+  color: #ffd700;
 }
 
 footer p {
   font-size: 14px;
 }
 
-footer .social-links .icon{
+footer .social-links .icon {
   height: 30px;
   width: 30px;
-
 }
- 
-  @media (max-width: 768px) {
-    .skills-grid {
-      flex-direction: column;
-    }
+
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
   }
-  
+}

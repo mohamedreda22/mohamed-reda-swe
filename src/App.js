@@ -259,7 +259,7 @@ const App = () => {
       title: "Soldier",
       company: "Egyptian Border Guard",
       type: "military service",
-      duration: "Feb 2025 - Present",
+      duration: "Feb 2025 - March 2026",
       description:
         "Served with discipline and dedication in the Egyptian Army Border Guard, applying leadership and organizational skills to support and manage battalion operations, contributing to achieving mission objectives and maintaining unit readiness.",
     },
@@ -369,163 +369,64 @@ const App = () => {
   ];
   const certifications = [
     {
-      title: "What Is Generative AI?",
+      title: "Generative AI & Artificial Intelligence Fundamentals",
+      issuer: "Microsoft, LinkedIn, PMI",
+      issuedDate: "Oct 2024 – Dec 2024",
+      skills: [
+        "Generative AI",
+        "Artificial Intelligence (AI)",
+        "Responsible AI",
+        "Computer Ethics",
+        "AI for Business",
+      ],
+      includes: [
+        "Career Essentials in Generative AI",
+        "What Is Generative AI?",
+        "Introduction to Artificial Intelligence",
+        "Ethics in the Age of Generative AI",
+      ],
+    },
+    {
+      title: "Microsoft Copilot & AI Productivity",
       issuer: "LinkedIn",
       issuedDate: "Oct 2024",
-      skills: ["Generative AI", "Artificial Intelligence (AI)" ],
-      logo: "linkedin.png",
+      skills: ["Microsoft Copilot", "Microsoft 365", "AI Productivity"],
+      includes: [
+        "Learning Microsoft 365 Copilot",
+        "Streamlining Your Work with Microsoft Copilot",
+      ],
     },
     {
-      title: "MongoDB",
-      issuer: "MaharaTech - ITI",
-      issuedDate: "Sep 2024",
-      skills: ["MongoDB", "Databases", "NoSQL"],
-      logo: "maharatech.jpeg",
-    },
-    {
-      title: "Getting your website online",
-      issuer: "LinkedIn",
-      issuedDate: "Aug 2024",
-      skills: ["Web Hosting"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Introduction to Networking and Storage",
-      issuer: "IBM",
-      issuedDate: "Mar 2024",
-      logo: "ibm.webp",
-    },
-    {
-      title: "Build a JavaScript AI App with React and the OpenAI API",
-      issuer: "LinkedIn",
-      issuedDate: "Dec 2023",
+      title: "Frontend Development with React & JavaScript",
+      issuer: "LinkedIn, Meta, OpenClassrooms",
+      issuedDate: "Jun 2023 – Dec 2024",
       skills: [
-        "Artificial Intelligence (AI)",
-        "Generative AI",
         "React.js",
-        "Front-End Development",
         "JavaScript",
+        "Front-End Development",
+        "Redux Toolkit",
       ],
-      logo: "linkedin.png",
+      includes: [
+        "Hands-On Introduction: JavaScript",
+        "Hands-On Introduction: React",
+        "Advanced React",
+        "Coding Exercises: React.js",
+      ],
     },
     {
-      title: "Bring Your Story to Life – Video Post-Production",
-      issuer: "Meta",
-      issuedDate: "Nov 2023",
-      skills: ["Storytelling", "Adobe Premiere Pro"],
-      logo: "meta.png",
-    },
-    {
-      title: "Coding Exercises React.js",
-      issuer: "LinkedIn",
-      issuedDate: "Nov 2023",
-      skills: ["React.js"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Hands-On Introduction: React",
-      issuer: "LinkedIn",
-      issuedDate: "Nov 2023",
-      skills: ["React.js"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Introducing Semantic Kernel: Building AI-Based Apps",
-      issuer: "LinkedIn",
-      issuedDate: "Nov 2023",
+      title: "Databases, APIs & Development Tools",
+      issuer: "IBM, LinkedIn, MaharaTech",
+      issuedDate: "May 2023 – Sep 2024",
       skills: [
-        "Artificial Intelligence (AI)",
-        "Generative AI",
-        "Software Development",
-        "PROMPT",
-        "Semantic Kernel",
+        "MongoDB",
+        "Databases",
+        "NoSQL",
+        "Docker",
+        "Git",
+        "GitHub",
+        "Postman",
       ],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Software Design: Modeling with UML",
-      issuer: "LinkedIn",
-      issuedDate: "Nov 2023",
-      skills: ["Software Design", "Unified Modeling Language (UML)"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Git & GitHub",
-      issuer: "IBM",
-      issuedDate: "Sep 2023",
-      skills: ["Git", "GitHub"],
-      logo: "ibm.webp",
-    },
-    {
-      title: "Learning Redux Toolkit",
-      issuer: "LinkedIn",
-      issuedDate: "Sep 2023",
-      skills: ["Redux.js"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Advanced React",
-      issuer: "Meta",
-      issuedDate: "Aug 2023",
-      skills: ["React.js"],
-      logo: "meta.png",
-    },
-    {
-      title: "React basics",
-      issuer: "Meta",
-      issuedDate: "Jul 2023",
-      skills: ["React.js"],
-      logo: "meta.png",
-    },
-    {
-      title: "Create a Web Application With React.js",
-      issuer: "OpenClassrooms",
-      issuedDate: "Jun 2023",
-      skills: ["React.js", "Front-End Development"],
-      logo: "OpenClassrooms.jpg",
-    },
-    {
-      title: "Docker",
-      issuer: "LinkedIn",
-      issuedDate: "May 2023",
-      skills: ["Docker"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Postman",
-      issuer: "LinkedIn",
-      issuedDate: "May 2023",
-      skills: ["Postman"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Data Structures",
-      issuer: "LinkedIn",
-      issuedDate: "Nov 2022",
-      skills: ["Data Structures", "Algorithms"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Programming Foundations: Databases",
-      issuer: "LinkedIn",
-      issuedDate: "Nov 2022",
-      skills: ["Databases"],
-      logo: "linkedin.png",
-    },
-    {
-      title: "Learning Java",
-      issuer: "LinkedIn",
-      issuedDate: "Dec 2021",
-      skills: ["Java"],
-      logo: "linkedin.png",
-    },
-
-    {
-      title: "Programming Foundations: Algorithms",
-      issuer: "LinkedIn",
-      issuedDate: "Jul 2023",
-      skills: ["Algorithms"],
-      logo: "linkedin.png",
+      includes: ["MongoDB", "Git & GitHub", "Docker", "Postman"],
     },
   ];
   // useEffect to handle the slideshow
@@ -723,23 +624,48 @@ const App = () => {
 
       <section className="certifications-section" id="certifications">
         <h1>Certifications</h1>
+
         {certifications.map((cert, index) => (
-          <div className="certification-item" key={index}>
-            <img
-              src={`${process.env.PUBLIC_URL}/${cert.logo}`}
-              alt={`${cert.issuer} Logo`}
-              className="certification-logo"
-            />
+          <div className="certification-item merged" key={index}>
+            {/* Logo */}
+            {cert.logo && (
+              <img
+                src={`${process.env.PUBLIC_URL}/${cert.logo}`}
+                alt={`${cert.issuer} Logo`}
+                className="certification-logo"
+              />
+            )}
+
+            {/* Details */}
             <div className="certification-details">
               <h3 className="certification-title">{cert.title}</h3>
-              <p className="certification-issuer">Issued by {cert.issuer}</p>
-              <p className="certification-issued-date">
-                Issued: {cert.issuedDate}
+
+              <p className="certification-meta">
+                <span className="certification-issuer">{cert.issuer}</span>
+                {" • "}
+                <span className="certification-issued-date">
+                  {cert.issuedDate}
+                </span>
               </p>
+
+              {/* Skills */}
               {cert.skills && (
-                <p className="certification-skills">
-                  Skills: {cert.skills.join(", ")}
-                </p>
+                <div className="certification-skills">
+                  {cert.skills.map((skill, i) => (
+                    <span className="skill-badge" key={i}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* Included Certificates (Merged view) */}
+              {cert.includes && (
+                <ul className="certification-includes">
+                  {cert.includes.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
               )}
             </div>
           </div>
@@ -805,7 +731,7 @@ const App = () => {
             />
           </a>
         </div>
-        <p>&copy; 2025 Mohamed Reda. All rights reserved.</p>
+        <p>&copy; 2026 Mohamed Reda. All rights reserved.</p>
       </footer>
     </div>
   );
