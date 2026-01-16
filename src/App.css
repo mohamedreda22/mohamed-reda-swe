@@ -165,7 +165,7 @@ nav a {
 
 /* Apply the index to each skill item for staggered animation */
 .skills-grid .skill-item:nth-child(n) {
-  --item-index: calc(n - 1);
+  --item-index: calc(var(--n) - 1);
 }
 
 .skills-grid span {
