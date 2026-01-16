@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Mohamed Reda Ismail – Portfolio
+<img width="1895" height="1079" alt="Screenshot 2026-01-16 172040" src="https://github.com/user-attachments/assets/030a27ac-c805-4dd7-ae61-7b29ac5d5281" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Software Engineer | Front-End & Full-Stack Web Developer (React • MERN • MEAN)**  
+📍 Cairo, Egypt  
+📧 mohamedreda.dev@gmail.com  
+📞 +20 115 592 1429 | +20 101 320 1998  
+🔗 [LinkedIn](https://linkedin.com/in/swe-mohamed-reda) | [GitHub](https://github.com/mohamedreda22) | [Portfolio](https://mohamed-reda-swe-mohamedreda22s-projects.vercel.app/)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 👋 Professional Summary
 
-### `npm start`
+I am a passionate Software Engineer specializing in Front-End and Full-Stack Web Development with expertise in **React.js** and modern JavaScript ecosystems. I have experience building **scalable, user-friendly, and secure web applications**, including e-commerce platforms, dashboards, and authentication systems using **MERN** and **MEAN** stacks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I have also demonstrated leadership as a **graduation project team leader**, guiding a team through real-world full-stack development projects. I am seeking **full-time opportunities** starting **March 2026** after completing military service.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 💻 Technical Skills
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Front-End
+- React.js, Angular, JavaScript (ES6+), TypeScript  
+- Redux Toolkit, HTML5, CSS3, Sass, Bootstrap  
 
-### `npm run build`
+### Back-End
+- Node.js, Express.js, RESTful APIs  
+- MongoDB, MySQL, SQL  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Programming Languages
+- JavaScript, Python, Java, C  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tools & Platforms
+- Git, GitHub, Docker, Linux, Postman, VS Code, Jira  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Concepts & Methodologies
+- MERN & MEAN Stack  
+- Object-Oriented Programming (OOP), SOLID Principles  
+- Clean Code, Agile, Scrum, CI/CD  
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Projects
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **University News-Line System (Graduation Project)**  
+**Role:** Team Leader | Full-Stack Developer  
+- Led the development of a **university communication platform** connecting students and staff  
+- Designed and implemented **front-end components using React.js**  
+- Built backend services with **Java, Spring Boot, and MySQL**  
+- Implemented **JWT-based authentication** for secure user access  
+**Technologies:** React, Java, Spring Boot, MySQL, JWT  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Bistro Bliss – Restaurant Management System**  
+**Role:** Full-Stack Developer  
+- Built a **restaurant reservation and menu management system**  
+- Developed **responsive front-end interfaces using Angular**  
+- Implemented **back-end APIs** for reservations and menu operations  
+**Technologies:** Angular, Node.js, MongoDB  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🌐 Portfolio
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can explore my projects, code, and live demos here:  
+[my portfolio](https://mohamed-reda-swe-mohamedreda22s-projects.vercel.app/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📈 Why Hire Me?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Strong expertise in **modern front-end frameworks** (React, Angular) and **full-stack development**  
+- Proven ability to **lead teams** and deliver complex projects  
+- Skilled in **writing clean, maintainable code** and following best practices  
+- Quick learner, adaptable, and ready for **real-world challenges**  
+- Open to **full-time opportunities** starting **March 2026**
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔗 Connect with Me
 
-### Making a Progressive Web App
+- **LinkedIn:** [linkedin.com/in/swe-mohamed-reda](https://linkedin.com/in/swe-mohamed-reda)  
+- **GitHub:** [github.com/mohamedreda22](https://github.com/mohamedreda22)  
+- **Email:** mohamedreda.dev@gmail.com  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
