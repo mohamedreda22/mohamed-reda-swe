@@ -96,7 +96,7 @@ const App = () => {
         "casual6.png",
         "casual7.png",
         "casual8.png",
-        "casual9.png"
+        "casual9.png",
       ],
       currentImage: "casual1.png",
     },
@@ -492,7 +492,7 @@ const App = () => {
     return () => {
       intervals.forEach((interval) => clearInterval(interval));
     };
-  }, []);
+  }, [projects]);
 
   const downloadCV = () => {
     try {
@@ -609,7 +609,7 @@ const App = () => {
                 <img
                   className="slideshow-image"
                   src={`${process.env.PUBLIC_URL}/${project.currentImage}`}
-                  alt={`${project.name} Image`}
+                  alt={`${project.name} preview`}
                 />
               </div>
               <div className="project-info">
