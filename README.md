@@ -5,7 +5,7 @@
 📍 Cairo, Egypt  
 📧 mohamedreda.dev@gmail.com  
 📞 +20 115 592 1429 | +20 101 320 1998  
-🔗 [LinkedIn](https://linkedin.com/in/swe-mohamed-reda) | [GitHub](https://github.com/mohamedreda22) | [Portfolio](https://mohamedreda22.github.io/mohamed-reda-swe)
+🔗 [LinkedIn](https://linkedin.com/in/swe-mohamed-reda) | [GitHub](https://github.com/mohamedreda22) | [Portfolio](https://mohamed-reda-swe-mohamedreda22s-projects.vercel.app/)
 
 ---
 
@@ -62,7 +62,7 @@ I have also demonstrated leadership as a **graduation project team leader**, gui
 ## 🌐 Portfolio
 
 You can explore my projects, code, and live demos here:  
-[https://mohamedreda22.github.io/mohamed-reda-swe](https://mohamedreda22.github.io/mohamed-reda-swe)
+[my portfolio](https://mohamed-reda-swe-mohamedreda22s-projects.vercel.app/)
 
 ---
 
