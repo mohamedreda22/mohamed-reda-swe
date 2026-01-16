@@ -609,7 +609,8 @@ const App = () => {
                 <img
                   className="slideshow-image"
                   src={`${process.env.PUBLIC_URL}/${project.currentImage}`}
-                  alt={`${project.name} preview`}
+                  // alt={`${project.name} preview`}
+                  alt="Project preview"
                 />
               </div>
               <div className="project-info">
