@@ -449,8 +449,8 @@ const App = () => {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "Mohamed Reda Ismail_swe.pdf";
-    link.download = "Mohamed Reda Ismail_swe.pdf";
+    link.href = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
+    link.download = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
     link.click();
   };
 
@@ -475,7 +475,7 @@ const App = () => {
       {/* NAV */}
       <nav>
         <a href="#hero" className="nav-logo">
-          Mohamed<span>.</span>
+          Mohamed<span>.</span>Reda
         </a>
         <div className="nav-links">
           {navLinks.map((l) => (
@@ -496,7 +496,7 @@ const App = () => {
       </nav>
 
       {/* MOBILE MENU */}
-      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+      <div className={`mobile-menu${menuOpen ? " open" : ""}`}  >
         <button className="mobile-close" onClick={() => setMenuOpen(false)}>
           ✕
         </button>
@@ -519,7 +519,7 @@ const App = () => {
           <div className="hero-text">
             <div className="hero-badge anim d1">
               <span className="badge-dot" />
-              Available Mar 2026
+              Available Now
             </div>
             <h1 className="hero-name anim d2">
               Mohamed
@@ -586,17 +586,19 @@ const App = () => {
                 Web Development, with strong expertise in React.js and modern
                 JavaScript ecosystems.
               </p>
+
               <p>
-                I've built production-grade applications — from e-commerce
-                platforms and restaurant management systems to university
-                communication tools — using both MERN and MEAN stacks.
+                I've developed real-world applications — including e-commerce
+                platforms, restaurant management systems, and university
+                communication tools — using MERN and MEAN stacks with a strong
+                focus on scalability and performance.
               </p>
+
               <p>
-                Currently completing military service, I'll be fully available
-                for new opportunities from{" "}
-                <strong style={{ color: "var(--accent)" }}>March 2026</strong>.
-                I'm passionate about clean architecture, performant UI, and
-                meaningful user experiences.
+                I'm currently open to new opportunities where I can contribute
+                to building modern, scalable web applications and deliver
+                exceptional user experiences through clean architecture and
+                high-quality code.
               </p>
             </div>
             <div className="about-cards">
@@ -708,7 +710,15 @@ const App = () => {
       <div className="certs-bg" id="certifications">
         <div className="section-wrap">
           <div className="section-eyebrow">Learning</div>
-          <h2 className="section-heading">Certifications</h2>
+          <h2 className="section-heading">
+            Certifications
+            <a
+              href="https://drive.google.com/drive/folders/1AY5E9a4IXnIOR3lwJLI-uMeMGmSGdiwP?usp=drive_link"
+              style={{ textDecoration: "none", target: "_blank" }}
+            >
+              🔗
+            </a>
+          </h2>{" "}
           <div className="certs-grid">
             {certifications.map((c) => (
               <div className="cert-card" key={c.title}>
@@ -742,8 +752,10 @@ const App = () => {
           <div className="contact-grid">
             <div className="contact-left">
               <p>
-                I'm actively seeking full-time software engineering roles.<br/>
-                Whether you have an opportunity, a project idea, or just want to connect,  my inbox is always open.
+                I'm actively seeking full-time software engineering roles.
+                <br />
+                Whether you have an opportunity, a project idea, or just want to
+                connect, my inbox is always open.
               </p>
               <div className="contact-links">
                 <a
@@ -772,13 +784,13 @@ const App = () => {
                   github.com/mohamedreda22
                 </a>
                 <a
-                  href="https://wa.me/201155921429"
+                  href="https://wa.me/201013201998"
                   target="_blank"
                   rel="noreferrer"
                   className="contact-item"
                 >
                   <div className="contact-icon">📱</div>
-                  WhatsApp: +20 115 592 1429
+                  WhatsApp: +20 101 320 1998
                 </a>
               </div>
             </div>
@@ -806,7 +818,7 @@ const App = () => {
       {/* FOOTER */}
       <footer>
         <div className="footer-logo">
-          Mohamed<span>.</span>
+          Mohamed<span>.</span>Reda
         </div>
         <div className="footer-copy">
           © 2026 Mohamed Reda. All rights reserved.

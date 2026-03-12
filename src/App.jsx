@@ -23,26 +23,26 @@ const App = () => {
     }))
   );
 
- useEffect(() => {
-  console.log("Projects component:", Projects);
-   const interval = setInterval(() => {
-     setProjects((prev) =>
-       prev.map((project) => ({
-         ...project,
-         currentImageIndex:
-           (project.currentImageIndex + 1) % project.images.length,
-       }))
-     );
-   }, 2500);
+  useEffect(() => {
+    console.log("Projects component:", Projects);
+    const interval = setInterval(() => {
+      setProjects((prev) =>
+        prev.map((project) => ({
+          ...project,
+          currentImageIndex:
+            (project.currentImageIndex + 1) % project.images.length,
+        }))
+      );
+    }, 2500);
 
-   return () => clearInterval(interval);
- }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   const downloadCV = () => {
     try {
       const link = document.createElement("a");
-      link.href = "Mohamed Reda Ismail_swe.pdf";
-      link.download = "Mohamed Reda Ismail_swe.pdf";
+      link.href = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
+      link.download = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
       link.click();
     } catch (error) {
       console.error("Download failed", error);
