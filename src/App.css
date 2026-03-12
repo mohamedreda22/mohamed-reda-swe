@@ -214,6 +214,7 @@ nav {
 .hero-text {
   flex: 1;
   min-width: 0;
+  overflow-wrap: break-word;
 }
 .hero-badge {
   display: inline-flex;
@@ -257,6 +258,8 @@ nav {
   letter-spacing: -0.035em;
   color: var(--text-primary);
   margin-bottom: 14px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .hero-name .accent {
   color: var(--accent);
@@ -267,6 +270,8 @@ nav {
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 20px;
+    overflow-wrap:break-word;
+
 }
 .hero-bio {
   font-size: 15px;
@@ -274,6 +279,8 @@ nav {
   color: var(--text-secondary);
   max-width: 500px;
   margin-bottom: 40px;
+    overflow-wrap:break-word;
+
 }
 .hero-cta {
   display: flex;
@@ -460,7 +467,9 @@ nav {
   font-weight: 800;
   line-height: 1.08;
   color: var(--text-primary);
-  margin-bottom: 56px;
+  margin-bottom: 48px;
+    overflow-wrap:break-word;
+
 }
 
 @media (max-width: 768px) {
@@ -527,8 +536,38 @@ nav {
   }
 }
 
-@media(max-width:480px){
-  
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 16px;
+  }
+  .hero-inner {
+    padding-top: 80px;
+  }
+  .hero-name {
+    font-size: clamp(1.7rem, 9vw, 2.8rem);
+    letter-spacing: -0.02em;
+  }
+  .hero-role {
+    font-size: 14px;
+  }
+  .hero-bio {
+    font-size: 13px;
+  }
+  .photo-ring {
+    width: 170px;
+    height: 170px;
+  }
+  .hero-stats {
+    gap: 20px;
+  }
+  .stat-num {
+    font-size: 1.7rem;
+  }
+  .btn-primary,
+  .btn-ghost {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }
 /* ───── SKILLS ───── */
 .skills-bg {
