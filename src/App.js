@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useMemo } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -351,8 +351,8 @@ const Timeline = ({ experiences: exps }) => {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [visible, setVisible] = useState([]);
-
-  const filtered = exps.filter((e) => {
+const filtered = useMemo(() => {
+  return exps.filter((e) => {
     const matchF = filter === "all" || e.type.toLowerCase().includes(filter);
     const matchS =
       !search ||
@@ -362,8 +362,35 @@ const Timeline = ({ experiences: exps }) => {
         e.skills.some((s) => s.toLowerCase().includes(search.toLowerCase())));
     return matchF && matchS;
   });
+}, [exps, filter, search]);
+/*   const filtered = exps.filter((e) => {
+    const matchF = filter === "all" || e.type.toLowerCase().includes(filter);
+    const matchS =
+      !search ||
+      e.title.toLowerCase().includes(search.toLowerCase()) ||
+      e.company.toLowerCase().includes(search.toLowerCase()) ||
+      (e.skills &&
+        e.skills.some((s) => s.toLowerCase().includes(search.toLowerCase())));
+    return matchF && matchS;
+  }); */
 
   useEffect(() => {
+    const handle = () => {
+      const els = document.querySelectorAll(".tl-entry");
+      const bottom = window.scrollY + window.innerHeight - 80;
+      const vis = [];
+      els.forEach((el, i) => {
+        if (el.offsetTop < bottom) vis.push(i);
+      });
+      setVisible(vis);
+    };
+
+    window.addEventListener("scroll", handle, { passive: true });
+    handle();
+
+    return () => window.removeEventListener("scroll", handle);
+  }, [filtered.length]);
+/*   useEffect(() => {
     const handle = () => {
       const els = document.querySelectorAll(".tl-entry");
       const bottom = window.scrollY + window.innerHeight - 80;
@@ -376,7 +403,7 @@ const Timeline = ({ experiences: exps }) => {
     window.addEventListener("scroll", handle, { passive: true });
     handle();
     return () => window.removeEventListener("scroll", handle);
-  }, [filtered]);
+  }, [filtered]); */
 
   const filterLabels = [
     "all",
