@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useMemo } from "react";
 
 const Timeline = ({ experiences: exps }) => {
   const [filter, setFilter] = useState("all");
@@ -19,21 +18,22 @@ const Timeline = ({ experiences: exps }) => {
     });
   }, [exps, filter, search]);
 
-  const handleScroll = useCallback(() => {
-    const els = document.querySelectorAll(".tl-entry");
-    const bottom = window.scrollY + window.innerHeight - 100;
-    const vis = [];
-    els.forEach((el, i) => {
-      if (el.offsetTop < bottom) vis.push(i);
-    });
-    setVisible(vis);
-  }, []);
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [filtered.length, handleScroll]);
+    const handle = () => {
+      const els = document.querySelectorAll(".tl-entry");
+      const bottom = window.scrollY + window.innerHeight - 80;
+      const vis = [];
+      els.forEach((el, i) => {
+        if (el.offsetTop < bottom) vis.push(i);
+      });
+      setVisible(vis);
+    };
+
+    window.addEventListener("scroll", handle, { passive: true });
+    handle();
+
+    return () => window.removeEventListener("scroll", handle);
+  }, [filtered.length]);
 
   const filterLabels = [
     "all",
@@ -46,34 +46,26 @@ const Timeline = ({ experiences: exps }) => {
 
   return (
     <div>
-      <motion.div 
-        className="timeline-controls"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="timeline-controls">
         <input
           className="timeline-search"
           type="text"
-          placeholder="Search by skill, title, or company..."
+          placeholder="Search by skill, title or company…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <div className="filter-pills">
           {filterLabels.map((f) => (
-            <motion.button
+            <button
               key={f}
               className={`pill${filter === f ? " active" : ""}`}
               onClick={() => setFilter(f)}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
             >
               {f.charAt(0).toUpperCase() + f.slice(1)}
-            </motion.button>
+            </button>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       <div className="tl-list">
         {filtered.map((exp, i) => (
@@ -103,21 +95,6 @@ const Timeline = ({ experiences: exps }) => {
             </div>
           </div>
         ))}
-        {filtered.length === 0 && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            style={{ 
-              textAlign: "center", 
-              color: "var(--text-muted)",
-              padding: "40px 0",
-              fontFamily: "var(--font-mono)",
-              fontSize: "14px",
-            }}
-          >
-            No experiences match your search criteria.
-          </motion.p>
-        )}
       </div>
     </div>
   );
@@ -126,15 +103,8 @@ const Timeline = ({ experiences: exps }) => {
 const Experience = ({ experiences }) => (
   <div className="exp-bg" id="experience">
     <div className="section-wrap">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="section-eyebrow">Career</div>
-        <h2 className="section-heading">Experience & Journey</h2>
-      </motion.div>
+      <div className="section-eyebrow">Career</div>
+      <h2 className="section-heading">Experience & Journey</h2>
       <Timeline experiences={experiences} />
     </div>
   </div>

@@ -6,17 +6,19 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  overflow-x: hidden;
+  max-width: 95vw;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background: #0a192f;
-  color: #e6f1ff;
+  background: #080810;
+  color: #f0eef8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 95vw;
 }
 
 img {

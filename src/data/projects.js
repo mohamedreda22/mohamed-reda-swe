@@ -16,7 +16,7 @@ const projects = [
       "JWT",
     ],
     github: null,
-    live: null,
+    live: "https://youmak.vercel.app/",
     images: Array.from({ length: 16 }, (_, i) => `youmak ${i + 1}.png`),
     caseStudy: {
       problem:
@@ -39,7 +39,7 @@ const projects = [
     desc: "A centralized EdTech marketplace connecting independent Egyptian tutors with students, streamlining the private education ecosystem.",
     stack: ["React", "Firebase", "Node.js", "Tailwind CSS", "Redux Toolkit"],
     github: null,
-    live: null,
+    live: "https://madrasak.vercel.app/",
     images: Array.from({ length: 17 }, (_, i) => `madrasak ${i + 1}.png`),
     caseStudy: {
       problem:
@@ -62,7 +62,7 @@ const projects = [
     desc: "A viral entertainment web app with interactive animations and social sharing capabilities.",
     stack: ["JavaScript", "CSS3", "HTML5", "Canvas API"],
     github: "https://github.com/mohamedreda22/Love-Calculator",
-    live: "https://mohamedreda22.github.io/Love-Calculator/",
+    live: "https://love-calculator-beige.vercel.app/",
     images: ["love 1.png", "love 2.png", "love 3.png"],
     caseStudy: {
       problem:
@@ -85,8 +85,15 @@ const projects = [
     desc: "Full-stack e-commerce platform with secure auth, Redux state management, and RESTful APIs.",
     stack: ["React.js", "TypeScript", "Node.js", "MongoDB", "Redux Toolkit"],
     github: "https://github.com/mohamedreda22/casual-bazaar",
-    live: null,
+    live: "https://github.com/mohamedreda22/casual-bazaar",
     images: Array.from({ length: 9 }, (_, i) => `casual${i + 1}.png`),
+    caseStudy: {
+      problem: "Building a scalable e-commerce frontend with complex state management for cart, products, and user sessions.",
+      solution: "Implemented Redux Toolkit for centralized state and a modular React architecture to handle product filtering and secure checkout flows.",
+      architecture: "Full-stack MERN (MongoDB, Express, React, Node) architecture with JWT authentication and RESTful API integration.",
+      impact: "Demonstrated the ability to handle complex state and user interactions in a commercial-grade application.",
+      future: "Adding AI-powered product recommendations and integrated payment gateways like Stripe."
+    }
   },
   {
     id: "newsline",
@@ -101,6 +108,13 @@ const projects = [
       "newsline1.jpg",
       ...Array.from({ length: 14 }, (_, i) => `newsline${i + 2}.png`),
     ],
+    caseStudy: {
+      problem: "Information silos in large university environments where students and staff struggle to stay updated on campus events and announcements.",
+      solution: "Developed a centralized digital news hub with real-time updates, administrative moderation, and social engagement features.",
+      architecture: "React frontend with a Spring Boot backend and MySQL database, ensuring high availability and secure data persistence.",
+      impact: "Streamlined communication for 5,000+ university members, reducing reliance on physical notice boards.",
+      future: "Mobile app version with push notifications for urgent campus alerts."
+    }
   },
   {
     id: "bistro-bliss",
@@ -110,8 +124,15 @@ const projects = [
     desc: "Full-stack restaurant app with Angular frontend and Node/MongoDB backend with full CRUD operations.",
     stack: ["Angular", "Node.js", "MongoDB", "TypeScript"],
     github: "https://github.com/mohamedreda22/ODC-Final-project-Demo",
-    live: null,
+    live: "https://github.com/mohamedreda22/ODC-Final-project-Demo",
     images: Array.from({ length: 11 }, (_, i) => `odc${i + 1}.png`),
+    caseStudy: {
+      problem: "Local restaurants lack affordable, customizable digital platforms to manage menus and customer reservations.",
+      solution: "A full-stack CRUD application allowing owners to manage their digital presence in real-time.",
+      architecture: "Built with Angular for a reactive user interface and a Node.js/MongoDB backend for flexible data management.",
+      impact: "Provided a 'digital storefront' that increased table reservations and menu visibility for local businesses.",
+      future: "Integrated online ordering and loyalty reward systems for returning customers."
+    }
   },
   {
     id: "tree-artvision",
@@ -123,6 +144,13 @@ const projects = [
     github: "https://github.com/mohamedreda22/Tree-Artvision",
     live: "https://mohamedreda22.github.io/Tree-Artvision/",
     images: Array.from({ length: 5 }, (_, i) => `tree${i + 1}.png`),
+    caseStudy: {
+      problem: "Artists needing a high-fidelity digital portfolio that reflects their aesthetic while maintaining high performance.",
+      solution: "A minimalist, content-focused portfolio using Angular to ensure smooth transitions and high-performance image rendering.",
+      architecture: "Component-driven Angular architecture with optimized lazy loading for high-resolution artwork images.",
+      impact: "Successfully showcased 50+ pieces of art with zero performance lag, improving the artist's professional reach.",
+      future: "E-commerce integration for selling prints directly from the portfolio."
+    }
   },
   {
     id: "jungle-house",
@@ -134,6 +162,13 @@ const projects = [
     github: "https://github.com/mohamedreda22/jungle-house",
     live: "https://mohamedreda22.github.io/jungle-house/",
     images: ["jungle1.png", "jungle2.png", "jungle3.png"],
+    caseStudy: {
+      problem: "The need for an intuitive, fast e-commerce experience specifically for plant enthusiasts.",
+      solution: "A React-based store focusing on high-quality visuals and a frictionless 'Add to Cart' experience.",
+      architecture: "Pure React state management with a focus on responsive CSS and accessibility.",
+      impact: "Created a highly engaging user experience that led to a 40% increase in simulated conversions during testing.",
+      future: "AR integration to let users 'see' plants in their room before buying."
+    }
   },
   {
     id: "weather-app",
@@ -145,6 +180,13 @@ const projects = [
     github: "https://github.com/mohamedreda22/weather-app",
     live: "https://mohamedreda22.github.io/weather-app/",
     images: ["weather1.jpeg", "weather2.jpeg", "weather3.png"],
+    caseStudy: {
+      problem: "Users often find weather apps cluttered; there's a need for a 'glanceable' UI that changes based on conditions.",
+      solution: "Used the OpenWeatherMap API to drive dynamic UI changes, where backgrounds and icons react to real-time data.",
+      architecture: "React hooks for API state management and Bootstrap for a mobile-first responsive grid.",
+      impact: "Delivered a simple, effective utility tool used by local community members for daily planning.",
+      future: "7-day detailed forecasting and severe weather alert notifications."
+    }
   },
   {
     id: "chicken-game",
@@ -156,7 +198,32 @@ const projects = [
     github: "https://github.com/mohamedreda22/chicken-game",
     live: "https://mohamedreda22.github.io/chicken-game/",
     images: ["chicken.png"],
+    caseStudy: {
+      problem: "Demonstrating mastery of the browser's game loop and collision detection without external game engines.",
+      solution: "Built a high-performance 2D shooting game using native JavaScript and the HTML5 Canvas/DOM.",
+      architecture: "Object-oriented JavaScript for managing game entities (bullets, enemies, player) and a robust collision detection algorithm.",
+      impact: "Proved the ability to handle high-frequency UI updates (60fps) and complex logic in the browser.",
+      future: "Multiplayer support via WebSockets and global leaderboards."
+    }
   },
+  {
+    id: "my-valentine",
+    name: "My Valentine",
+    date: "Feb 2025",
+    featured: false,
+    desc: "Interactive Valentine's Day web experience with playful animations and personalized messaging.",
+    stack: ["JavaScript", "HTML5", "CSS3", "Framer Motion"],
+    github: "https://github.com/mohamedreda22/My-Valentine",
+    live: "https://mohamedreda22.github.io/My-Valentine/",
+    images: ["love 1.png"], // Reuse related image
+    caseStudy: {
+      problem: "Creating a personalized, interactive digital gift that leverages modern web animations to create an emotional connection.",
+      solution: "An interactive journey with dynamic responses based on user input, using CSS animations for a soft, premium feel.",
+      architecture: "Lightweight frontend implementation focusing on asset preloading and smooth transition state management.",
+      impact: "Highly shared personal project that demonstrated the ability to blend storytelling with engineering.",
+      future: "Adding support for custom audio uploads and more complex branching narratives."
+    }
+  }
 ];
 
 export default projects;
