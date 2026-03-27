@@ -8,31 +8,31 @@ const Hero = ({ downloadCV }) => (
     <div className="hero-inner">
       <motion.div
         className="hero-text"
-        initial={{ opacity: 0, x: -40 }}
+        initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.div 
+        <a
+          href="#about"
           className="hero-badge anim d1"
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 400 }}
+          style={{ textDecoration: 'none', display: 'inline-flex' }}
         >
           <span className="badge-dot" />
-          Available for Opportunities
-        </motion.div>
+          The Soldier Who Codes 🪖
+        </a>
         <h1 className="hero-name anim d2">
           Mohamed
           <br />
           <span className="accent">Reda</span>
         </h1>
         <p className="hero-role anim d3">
-          Full-Stack Software Engineer & Product Architect
+          Staff-Level Software Engineer & Product Architect
         </p>
         <p className="hero-bio anim d3">
-          I build scalable, high-performance web applications with a focus on 
-          clean architecture and exceptional user experiences. Bringing military 
-          discipline and engineering excellence to every project.
+          Specializing in scalable systems, architectural precision, and viral product growth.
+          Merging military discipline with engineering excellence to build the
+          high-performance future of the web.
         </p>
         <div className="hero-mission anim d3" style={{ marginBottom: "32px" }}>
           <div
@@ -41,8 +41,28 @@ const Hero = ({ downloadCV }) => (
               color: "var(--text-secondary)",
               display: "flex",
               alignItems: "center",
-              gap: "10px",
-              fontFamily: "var(--font-mono)",
+              gap: "8px",
+            }}
+          >
+            <span
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "#00d4ff",
+                boxShadow: "0 0 10px rgba(0, 212, 255, 0.45)",
+              }}
+            ></span>
+            <strong>Status:</strong> Service Completed (Mar 2026)
+          </div>
+          <div
+            style={{
+              fontSize: "13px",
+              color: "var(--text-secondary)",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              marginTop: "4px",
             }}
           >
             <span
@@ -51,105 +71,54 @@ const Hero = ({ downloadCV }) => (
                 height: "8px",
                 borderRadius: "50%",
                 background: "var(--accent)",
-                boxShadow: "0 0 12px var(--accent)",
+                boxShadow: "0 0 10px rgba(224, 23, 92, 0.45)",
               }}
-            />
-            <strong style={{ color: "var(--text-primary)" }}>Status:</strong> Service Completed (Mar 2026)
-          </div>
-          <div
-            style={{
-              fontSize: "13px",
-              color: "var(--text-secondary)",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              marginTop: "8px",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            <span
-              style={{
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                background: "var(--accent-secondary)",
-                boxShadow: "0 0 12px rgba(255, 209, 102, 0.5)",
-              }}
-            />
-            <strong style={{ color: "var(--text-primary)" }}>Mission:</strong> Scaling Global Products
+            ></span>
+            <strong>Current Mission:</strong> Scaling Global Products (Available for Hire)
           </div>
         </div>
         <div className="hero-cta anim d4">
-          <motion.button 
-            className="btn-primary" 
-            onClick={downloadCV}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Download Resume
-          </motion.button>
-          <motion.a 
-            href="#projects" 
-            className="btn-ghost"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            View Projects
-          </motion.a>
+          <button className="btn-primary" onClick={downloadCV}>
+            ⬇ Download Portfolio CV
+          </button>
+          <a href="#projects" className="btn-ghost">
+            Explore Case Studies →
+          </a>
         </div>
         <div className="hero-stats anim d4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
+          <div>
             <div className="stat-num">
               12<span>+</span>
             </div>
-            <div className="stat-label">Projects Shipped</div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.7, duration: 0.5 }}
-          >
+            <div className="stat-label">Deployments</div>
+          </div>
+          <div>
             <div className="stat-num">
               6<span>+</span>
             </div>
-            <div className="stat-label">Companies</div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
+            <div className="stat-label">Institutions</div>
+          </div>
+          <div>
             <div className="stat-num">
               100<span>%</span>
             </div>
-            <div className="stat-label">Commitment</div>
-          </motion.div>
+            <div className="stat-label">Mission Ready</div>
+          </div>
         </div>
       </motion.div>
       <motion.div
         className="hero-visual"
-        initial={{ opacity: 0, scale: 0.85 }}
+        initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <motion.div 
-          className="photo-ring anim d2"
-          whileHover={{ scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
+        <div className="photo-ring anim d2">
           <img
             src={`${process.env.PUBLIC_URL}/gp_photo.jpg`}
-            alt="Mohamed Reda - Software Engineer"
+            alt="Mohamed Reda - Staff Engineer"
           />
-        </motion.div>
+        </div>
       </motion.div>
     </div>
   </section>
