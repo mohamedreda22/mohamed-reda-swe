@@ -1,75 +1,79 @@
+import React, { useState } from "react";
 import "./App.css";
-import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import About from "./components/About";
 import Skills from "./components/Skills";
+import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-import skillsData from "./data/skills";
-import projectsData from "./data/projects";
-import experiencesData from "./data/experience";
-import certificationsData from "./data/certifications";
+import skillGroups from "./data/skills";
+import projects from "./data/projects";
+import experiences from "./data/experience";
+import certifications from "./data/certifications";
+import education from "./data/education";
 
 const App = () => {
-  const [projects, setProjects] = useState(
-    projectsData.map((project) => ({
-      ...project,
-      currentImageIndex: 0,
-    }))
-  );
-
-  useEffect(() => {
-    console.log("Projects component:", Projects);
-    const interval = setInterval(() => {
-      setProjects((prev) =>
-        prev.map((project) => ({
-          ...project,
-          currentImageIndex:
-            (project.currentImageIndex + 1) % project.images.length,
-        }))
-      );
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const downloadCV = () => {
-    try {
-      const link = document.createElement("a");
-      link.href = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
-      link.download = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
-      link.click();
-    } catch (error) {
-      console.error("Download failed", error);
-      alert("Download failed. Please try again later.");
-    }
+    const link = document.createElement("a");
+    link.href = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
+    link.download = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
+    link.click();
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    console.log("Form Submitted:", data);
-    alert("Thank you for your message! We will get back to you soon.");
-    event.target.reset();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Thank you! I'll get back to you soon.");
+    e.target.reset();
   };
+
+  const navLinks = [
+    "About",
+    "Skills",
+    "Education",
+    "Projects",
+    "Experience",
+    "Certifications",
+    "Contact",
+  ];
 
   return (
-    <>
-      <Navbar />
+    <div>
+      <Navbar navLinks={navLinks} setMenuOpen={setMenuOpen} />
+
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+        <button className="mobile-close" onClick={() => setMenuOpen(false)}>
+          ✕
+        </button>
+        {navLinks.map((l) => (
+          <a
+            key={l}
+            href={`#${l.toLowerCase()}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {l}
+          </a>
+        ))}
+      </div>
+
       <Hero downloadCV={downloadCV} />
-      <Skills skills={skillsData} />
-      <Projects projects={projectsData} />
-      <Experience experiences={experiencesData} />
-      <Certifications certifications={certificationsData} />
+      <About />
+      <Skills skillGroups={skillGroups} />
+      <Education education={education} />
+      <Projects projects={projects} />
+      <Experience experiences={experiences} />
+      <Certifications certifications={certifications} />
       <Contact handleSubmit={handleSubmit} />
       <Footer />
-    </>
+    </div>
   );
 };
 

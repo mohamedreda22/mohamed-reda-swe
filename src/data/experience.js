@@ -1,0 +1,66 @@
+const experiences = [
+  {
+    title: "Soldier",
+    company: "Egyptian Border Guard",
+    type: "military",
+    duration: "Feb 2025 – Mar 2026",
+    desc: "Served with discipline in border operations, applying leadership and organisational skills to support battalion objectives.",
+  },
+  {
+    title: "MEAN-Stack Training Program",
+    company: "National Telecommunication Institute (NTI)",
+    type: "internship",
+    duration: "Dec 2024 – Feb 2025",
+    desc: "Intensive MEAN-stack training covering advanced JavaScript, web security, SEO, and freelancing modules.",
+    skills: ["MongoDB", "Angular", "Node.js", "Express.js"],
+  },
+  {
+    title: "AI Model Reviewer",
+    company: "Outlier",
+    type: "freelance",
+    duration: "Nov 2024",
+    desc: "Reviewed and assessed AI model performance and quality on a freelance project basis.",
+  },
+  {
+    title: "MEAN Stack Developer Intern",
+    company: "Orange Digital Center Egypt",
+    type: "internship",
+    duration: "Sep 2024",
+    desc: "MEAN stack development collaboration between Orange Digital Center and AMIT Learning.",
+    skills: ["MongoDB", "AngularJS", "TypeScript", "Express.js", "Node.js"],
+  },
+  {
+    title: "React Developer Intern",
+    company: "Learn2Earn Education",
+    type: "internship",
+    duration: "May 2024 – Jul 2024",
+    desc: "Long-term internship honing React.js and front-end development skills on real projects.",
+    skills: ["React.js", "Front-End Development"],
+  },
+  {
+    title: "React Developer Intern",
+    company: "SYNC INTERN'S",
+    type: "internship",
+    duration: "Oct 2023",
+    desc: "First React.js internship, working on real-world projects to sharpen front-end skills.",
+    skills: ["React.js"],
+  },
+  {
+    title: "Web Development & Design Intern",
+    company: "Code Casa",
+    type: "internship",
+    duration: "Sep 2023",
+    desc: "Developed capstone projects including Tic-Tac-Toe and To-Do List applications.",
+    skills: ["React.js", "Web Development"],
+  },
+  {
+    title: "Web Development Intern",
+    company: "CodSoft",
+    type: "internship",
+    duration: "Aug 2023",
+    desc: "Built and tested web applications using HTML, CSS, JS and React.js. Contributed to code reviews.",
+    skills: ["React.js", "HTML", "CSS", "JavaScript"],
+  },
+];
+
+export default experiences;
