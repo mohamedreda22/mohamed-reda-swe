@@ -1,10 +1,18 @@
 const experiences = [
   {
-    title: "Soldier",
+    title: "Full-Stack Freelance Engineer",
+    company: "Self-Employed",
+    type: "freelance",
+    duration: "Mar 2026 – Present",
+    desc: "Architecting and deploying end-to-end web applications for clients, including the YouMak photo-sharing platform and the Modarsak educational marketplace. Focusing on high-performance React 19 frontends and scalable Node.js backends.",
+    skills: ["React 19", "Node.js", "System Architecture", "Product Design"],
+  },
+  {
+    title: "Soldier (Completed)",
     company: "Egyptian Border Guard",
     type: "military",
     duration: "Feb 2025 – Mar 2026",
-    desc: "Served with discipline in border operations, applying leadership and organisational skills to support battalion objectives.",
+    desc: "Successfully completed mandatory military service with the Egyptian Border Guard. This period instilled deep discipline, operational precision, and the ability to perform under high-pressure environments—traits I now apply to complex software engineering challenges.",
   },
   {
     title: "MEAN-Stack Training Program",
@@ -19,14 +27,14 @@ const experiences = [
     company: "Outlier",
     type: "freelance",
     duration: "Nov 2024",
-    desc: "Reviewed and assessed AI model performance and quality on a freelance project basis.",
+    desc: "Reviewed and assessed AI model performance and quality on a freelance project basis, contributing to the refinement of LLM outputs.",
   },
   {
     title: "MEAN Stack Developer Intern",
     company: "Orange Digital Center Egypt",
     type: "internship",
     duration: "Sep 2024",
-    desc: "MEAN stack development collaboration between Orange Digital Center and AMIT Learning.",
+    desc: "Advanced MEAN stack development collaboration between Orange Digital Center and AMIT Learning.",
     skills: ["MongoDB", "AngularJS", "TypeScript", "Express.js", "Node.js"],
   },
   {
@@ -34,7 +42,7 @@ const experiences = [
     company: "Learn2Earn Education",
     type: "internship",
     duration: "May 2024 – Jul 2024",
-    desc: "Long-term internship honing React.js and front-end development skills on real projects.",
+    desc: "Long-term internship honing React.js and front-end development skills on production-grade projects.",
     skills: ["React.js", "Front-End Development"],
   },
   {
@@ -42,7 +50,7 @@ const experiences = [
     company: "SYNC INTERN'S",
     type: "internship",
     duration: "Oct 2023",
-    desc: "First React.js internship, working on real-world projects to sharpen front-end skills.",
+    desc: "Focused on modular React components and state management for real-world applications.",
     skills: ["React.js"],
   },
   {
@@ -50,7 +58,7 @@ const experiences = [
     company: "Code Casa",
     type: "internship",
     duration: "Sep 2023",
-    desc: "Developed capstone projects including Tic-Tac-Toe and To-Do List applications.",
+    desc: "Developed capstone projects including interactive game engines and productivity tools.",
     skills: ["React.js", "Web Development"],
   },
   {
@@ -58,7 +66,7 @@ const experiences = [
     company: "CodSoft",
     type: "internship",
     duration: "Aug 2023",
-    desc: "Built and tested web applications using HTML, CSS, JS and React.js. Contributed to code reviews.",
+    desc: "Built and tested web applications using HTML, CSS, JS and React.js. Contributed to code reviews and UI optimization.",
     skills: ["React.js", "HTML", "CSS", "JavaScript"],
   },
 ];

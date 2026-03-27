@@ -24,54 +24,56 @@ import {
   faDesktop,
   faExchangeAlt,
   faVial,
+  faMicrochip,
+  faCogs,
+  faProjectDiagram,
 } from "@fortawesome/free-solid-svg-icons";
 
 const skillGroups = [
   {
-    label: "Frontend",
+    label: "Product Engineering",
     skills: [
-      { name: "React.js", icon: faReact },
+      { name: "React 19", icon: faReact },
       { name: "Angular", icon: faAngular },
       { name: "TypeScript", icon: faJsSquare },
-      { name: "JavaScript", icon: faJsSquare },
-      { name: "HTML5", icon: faHtml5 },
-      { name: "CSS3 / Sass", icon: faCss3Alt },
       { name: "Redux Toolkit", icon: faExchangeAlt },
+      { name: "Tailwind CSS", icon: faCss3Alt },
+      { name: "Framer Motion", icon: faDesktop },
+      { name: "UI/UX Design", icon: faLaptopCode },
     ],
   },
   {
-    label: "Backend & Data",
+    label: "System Architecture",
     skills: [
       { name: "Node.js", icon: faNodeJs },
       { name: "Express.js", icon: faServer },
       { name: "MongoDB", icon: faDatabase },
-      { name: "SQL", icon: faDatabase },
-      { name: "Python", icon: faPython },
-      { name: "REST API", icon: faServer },
-    ],
-  },
-  {
-    label: "Tools & Practices",
-    skills: [
-      { name: "Git", icon: faGitAlt },
-      { name: "Docker", icon: faCode },
-      { name: "CI/CD", icon: faCodeBranch },
-      { name: "Jest", icon: faVial },
-      { name: "Postman", icon: faEnvelope },
-      { name: "Jira", icon: faJira },
-      { name: "Slack", icon: faSlack },
-      { name: "Linux", icon: faCode },
-    ],
-  },
-  {
-    label: "Stacks & Concepts",
-    skills: [
+      { name: "SQL / PostgreSQL", icon: faDatabase },
+      { name: "RESTful APIs", icon: faProjectDiagram },
       { name: "MERN Stack", icon: faLayerGroup },
       { name: "MEAN Stack", icon: faCubes },
+    ],
+  },
+  {
+    label: "Engineering Operations",
+    skills: [
+      { name: "Git / Version Control", icon: faGitAlt },
+      { name: "CI/CD Pipelines", icon: faCodeBranch },
+      { name: "Jest / TDD", icon: faVial },
+      { name: "Docker", icon: faCode },
+      { name: "Linux Systems", icon: faCogs },
+      { name: "Postman / API Test", icon: faEnvelope },
+    ],
+  },
+  {
+    label: "Future & Methodology",
+    skills: [
       { name: "Generative AI", icon: faRobot },
+      { name: "Python / AI Ops", icon: faPython },
       { name: "Agile / Scrum", icon: faTasks },
-      { name: "Web Development", icon: faLaptopCode },
-      { name: "Front-end Dev", icon: faDesktop },
+      { name: "Large Scale Systems", icon: faMicrochip },
+      { name: "Performance Optimization", icon: faCogs },
+      { name: "Jira / Collaboration", icon: faJira },
     ],
   },
 ];
