@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const CaseStudyModal = ({ project, isOpen, onClose }) => {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+
   if (!isOpen) return null;
+
+  const projectName = project.name[currentLang] || project.name.en;
+  const problem = project.caseStudy.problem[currentLang] || project.caseStudy.problem.en;
+  const solution = project.caseStudy.solution[currentLang] || project.caseStudy.solution.en;
+  const architecture = project.caseStudy.architecture[currentLang] || project.caseStudy.architecture.en;
+  const impact = project.caseStudy.impact[currentLang] || project.caseStudy.impact.en;
+  const future = project.caseStudy.future[currentLang] || project.caseStudy.future.en;
 
   return (
     <motion.div
@@ -44,6 +55,7 @@ const CaseStudyModal = ({ project, isOpen, onClose }) => {
           boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
           border: "1px solid rgba(255,255,255,0.05)",
           position: "relative",
+          direction: i18n.dir(),
         }}
       >
         <button
@@ -51,7 +63,8 @@ const CaseStudyModal = ({ project, isOpen, onClose }) => {
           style={{
             position: "absolute",
             top: "20px",
-            right: "20px",
+            right: i18n.dir() === "rtl" ? "auto" : "20px",
+            left: i18n.dir() === "rtl" ? "20px" : "auto",
             background: "transparent",
             border: "none",
             color: "white",
@@ -64,8 +77,8 @@ const CaseStudyModal = ({ project, isOpen, onClose }) => {
         </button>
 
         <div className="modal-header" style={{ marginBottom: "30px" }}>
-          <div className="section-eyebrow">Case Study</div>
-          <h2 style={{ fontSize: "2.5rem", marginBottom: "10px" }}>{project.name}</h2>
+          <div className="section-eyebrow">{t('projects.eyebrow')}</div>
+          <h2 style={{ fontSize: "2.5rem", marginBottom: "10px" }}>{projectName}</h2>
           <div className="project-stack" style={{ marginTop: "15px" }}>
             {project.stack.map((t) => (
               <span className="stack-tag" key={t}>
@@ -78,36 +91,46 @@ const CaseStudyModal = ({ project, isOpen, onClose }) => {
         <div className="modal-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
           <div className="modal-info">
             <section style={{ marginBottom: "30px" }}>
-              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>The Problem</h4>
-              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{project.caseStudy.problem}</p>
+              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>
+                {t('projects.problem')}
+              </h4>
+              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{problem}</p>
             </section>
             <section style={{ marginBottom: "30px" }}>
-              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>The Solution</h4>
-              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{project.caseStudy.solution}</p>
+              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>
+                {t('projects.solution')}
+              </h4>
+              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{solution}</p>
             </section>
             <section style={{ marginBottom: "30px" }}>
-              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>Architecture</h4>
-              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{project.caseStudy.architecture}</p>
+              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>
+                {t('projects.architecture')}
+              </h4>
+              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{architecture}</p>
             </section>
           </div>
           <div className="modal-visuals">
              <section style={{ marginBottom: "30px" }}>
-              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>Impact & Results</h4>
-              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{project.caseStudy.impact}</p>
+              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>
+                {t('projects.impact')}
+              </h4>
+              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{impact}</p>
             </section>
              <section style={{ marginBottom: "30px" }}>
-              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>Future Roadmap</h4>
-              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{project.caseStudy.future}</p>
+              <h4 style={{ color: "var(--accent)", marginBottom: "10px", fontSize: "1.1rem" }}>
+                {t('projects.future')}
+              </h4>
+              <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{future}</p>
             </section>
             <div className="modal-actions" style={{ marginTop: "40px", display: "flex", gap: "15px" }}>
               {project.live && (
                 <a href={project.live} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: "12px 24px" }}>
-                  Launch Project ↗
+                  {t('projects.launch')}
                 </a>
               )}
               {project.github && (
                 <a href={project.github} target="_blank" rel="noreferrer" className="btn-ghost" style={{ padding: "12px 24px" }}>
-                  Codebase
+                  {t('projects.codebase')}
                 </a>
               )}
             </div>
@@ -115,13 +138,13 @@ const CaseStudyModal = ({ project, isOpen, onClose }) => {
         </div>
 
         <div className="modal-gallery" style={{ marginTop: "50px" }}>
-          <h4 style={{ marginBottom: "20px" }}>Gallery</h4>
+          <h4 style={{ marginBottom: "20px" }}>{t('projects.gallery')}</h4>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "15px" }}>
              {project.images.slice(0, 8).map((img, i) => (
                <img
                  key={i}
                  src={`${process.env.PUBLIC_URL}/${img}`}
-                 alt={`${project.name} screen ${i}`}
+                 alt={`${projectName} screen ${i}`}
                  style={{ width: "100%", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.05)" }}
                />
              ))}
@@ -135,6 +158,8 @@ const CaseStudyModal = ({ project, isOpen, onClose }) => {
 const ProjectCard = ({ project, index }) => {
   const [imgIdx, setImgIdx] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   useEffect(() => {
     if (project.images.length < 2) return;
@@ -144,6 +169,10 @@ const ProjectCard = ({ project, index }) => {
     );
     return () => clearInterval(t);
   }, [project.images.length]);
+
+  const projectName = project.name[currentLang] || project.name.en;
+  const projectDate = project.date[currentLang] || project.date.en;
+  const projectDesc = project.desc[currentLang] || project.desc.en;
 
   return (
     <>
@@ -159,18 +188,20 @@ const ProjectCard = ({ project, index }) => {
         <div className="project-img">
           <img
             src={`${process.env.PUBLIC_URL}/${project.images[imgIdx]}`}
-            alt={project.name}
+            alt={projectName}
             loading="lazy"
           />
           <div className="project-img-shade" />
           {project.caseStudy && (
-             <div className="case-study-badge">Read Case Study</div>
+             <div className="case-study-badge">
+                {t('projects.read_case_study')}
+             </div>
           )}
         </div>
         <div className="project-body">
-          <div className="project-date">{project.date}</div>
-          <h3 className="project-title">{project.name}</h3>
-          <p className="project-desc">{project.desc}</p>
+          <div className="project-date">{projectDate}</div>
+          <h3 className="project-title">{projectName}</h3>
+          <p className="project-desc">{projectDesc}</p>
           <div className="project-stack">
             {project.stack.slice(0, 4).map((t) => (
               <span className="stack-tag" key={t}>
@@ -188,7 +219,7 @@ const ProjectCard = ({ project, index }) => {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
               >
-                ↗ Live
+                {t('projects.live')}
               </a>
             )}
             {project.github && (
@@ -219,28 +250,32 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-const Projects = ({ projects }) => (
-  <div className="projects-bg" id="projects">
-    <div className="section-wrap">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="section-eyebrow">Portfolio</div>
-        <h2 className="section-heading">Featured Case Studies</h2>
-        <p style={{ color: "var(--text-secondary)", maxWidth: "600px", marginBottom: "40px" }}>
-          Selected projects from my engineering career. These case studies explore the architectural challenges, technical solutions, and high-stakes impact of my work.
-        </p>
-      </motion.div>
-      <div className="projects-grid">
-        {projects.map((p, index) => (
-          <ProjectCard key={p.id || p.name} project={p} index={index} />
-        ))}
+const Projects = ({ projects }) => {
+  const { t, i18n } = useTranslation();
+
+  return (
+    <div className="projects-bg" id="projects">
+      <div className="section-wrap">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="section-eyebrow">{t('projects.eyebrow')}</div>
+          <h2 className="section-heading">{t('projects.heading')}</h2>
+          <p style={{ color: "var(--text-secondary)", maxWidth: "600px", marginBottom: "40px" }}>
+            {t('projects.subheading')}
+          </p>
+        </motion.div>
+        <div className="projects-grid">
+          {projects.map((p, index) => (
+            <ProjectCard key={p.id || p.name.en} project={p} index={index} />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Projects;

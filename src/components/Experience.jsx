@@ -1,22 +1,28 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 const Timeline = ({ experiences: exps }) => {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [visible, setVisible] = useState([]);
 
   const filtered = useMemo(() => {
     return exps.filter((e) => {
+      const title = e.title[currentLang] || e.title.en;
+      const company = e.company[currentLang] || e.company.en;
+      const skills = e.skills || [];
+
       const matchF = filter === "all" || e.type.toLowerCase().includes(filter);
       const matchS =
         !search ||
-        e.title.toLowerCase().includes(search.toLowerCase()) ||
-        e.company.toLowerCase().includes(search.toLowerCase()) ||
-        (e.skills &&
-          e.skills.some((s) => s.toLowerCase().includes(search.toLowerCase())));
+        title.toLowerCase().includes(search.toLowerCase()) ||
+        company.toLowerCase().includes(search.toLowerCase()) ||
+        skills.some((s) => s.toLowerCase().includes(search.toLowerCase()));
       return matchF && matchS;
     });
-  }, [exps, filter, search]);
+  }, [exps, filter, search, currentLang]);
 
   useEffect(() => {
     const handle = () => {
@@ -36,12 +42,12 @@ const Timeline = ({ experiences: exps }) => {
   }, [filtered.length]);
 
   const filterLabels = [
-    "all",
-    "tech",
-    "military",
-    "career break",
-    "freelance",
-    "internship",
+    { key: "all", label: t('experience.all') },
+    { key: "tech", label: t('experience.tech') },
+    { key: "military", label: t('experience.military') },
+    { key: "career break", label: t('experience.career_break') },
+    { key: "freelance", label: t('experience.freelance') },
+    { key: "internship", label: t('experience.internship') },
   ];
 
   return (
@@ -50,64 +56,74 @@ const Timeline = ({ experiences: exps }) => {
         <input
           className="timeline-search"
           type="text"
-          placeholder="Search by skill, title or company…"
+          placeholder={t('experience.search_placeholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <div className="filter-pills">
           {filterLabels.map((f) => (
             <button
-              key={f}
-              className={`pill${filter === f ? " active" : ""}`}
-              onClick={() => setFilter(f)}
+              key={f.key}
+              className={`pill${filter === f.key ? " active" : ""}`}
+              onClick={() => setFilter(f.key)}
             >
-              {f.charAt(0).toUpperCase() + f.slice(1)}
+              {f.label}
             </button>
           ))}
         </div>
       </div>
 
       <div className="tl-list">
-        {filtered.map((exp, i) => (
-          <div
-            key={i}
-            className={`tl-entry${visible.includes(i) ? " visible" : ""}`}
-          >
+        {filtered.map((exp, i) => {
+          const title = exp.title[currentLang] || exp.title.en;
+          const company = exp.company[currentLang] || exp.company.en;
+          const duration = exp.duration[currentLang] || exp.duration.en;
+          const desc = exp.desc ? (exp.desc[currentLang] || exp.desc.en) : null;
+
+          return (
             <div
-              className={`tl-dot ${exp.type.toLowerCase().replace(" ", "-")}`}
-            />
-            <div className="tl-card">
-              <div className="tl-head">
-                <span className="tl-title">{exp.title}</span>
-                <span className="tl-dur">{exp.duration}</span>
-              </div>
-              <div className="tl-company">{exp.company}</div>
-              {exp.desc && <p className="tl-desc">{exp.desc}</p>}
-              {exp.skills && (
-                <div className="tl-skills">
-                  {exp.skills.map((s, j) => (
-                    <span className="skill-badge" key={j}>
-                      {s}
-                    </span>
-                  ))}
+              key={i}
+              className={`tl-entry${visible.includes(i) ? " visible" : ""}`}
+            >
+              <div
+                className={`tl-dot ${exp.type.toLowerCase().replace(" ", "-")}`}
+              />
+              <div className="tl-card">
+                <div className="tl-head">
+                  <span className="tl-title">{title}</span>
+                  <span className="tl-dur">{duration}</span>
                 </div>
-              )}
+                <div className="tl-company">{company}</div>
+                {desc && <p className="tl-desc">{desc}</p>}
+                {exp.skills && (
+                  <div className="tl-skills">
+                    {exp.skills.map((s, j) => (
+                      <span className="skill-badge" key={j}>
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
 };
 
-const Experience = ({ experiences }) => (
-  <div className="exp-bg" id="experience">
-    <div className="section-wrap">
-      <div className="section-eyebrow">Career</div>
-      <h2 className="section-heading">Experience & Journey</h2>
-      <Timeline experiences={experiences} />
+const Experience = ({ experiences }) => {
+  const { t } = useTranslation();
+  return (
+    <div className="exp-bg" id="experience">
+      <div className="section-wrap">
+        <div className="section-eyebrow">{t('experience.eyebrow')}</div>
+        <h2 className="section-heading">{t('experience.heading')}</h2>
+        <Timeline experiences={experiences} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Experience;

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import { useTranslation } from "react-i18next";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -20,6 +21,12 @@ import education from "./data/education";
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.dir = i18n.dir();
+    document.documentElement.lang = i18n.language;
+  }, [i18n, i18n.language]);
 
   const downloadCV = () => {
     const link = document.createElement("a");
@@ -30,18 +37,18 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thank you! I'll get back to you soon.");
+    alert(t("contact.alert_success", "Thank you! I'll get back to you soon."));
     e.target.reset();
   };
 
   const navLinks = [
-    "About",
-    "Skills",
-    "Education",
-    "Projects",
-    "Experience",
-    "Certifications",
-    "Contact",
+    { key: "About", label: t("nav.about") },
+    { key: "Skills", label: t("nav.skills") },
+    { key: "Education", label: t("nav.education") },
+    { key: "Projects", label: t("nav.projects") },
+    { key: "Experience", label: t("nav.experience") },
+    { key: "Certifications", label: t("nav.certifications") },
+    { key: "Contact", label: t("nav.contact") },
   ];
 
   return (
@@ -55,11 +62,11 @@ const App = () => {
         </button>
         {navLinks.map((l) => (
           <a
-            key={l}
-            href={`#${l.toLowerCase()}`}
+            key={l.key}
+            href={`#${l.key.toLowerCase()}`}
             onClick={() => setMenuOpen(false)}
           >
-            {l}
+            {l.label}
           </a>
         ))}
       </div>

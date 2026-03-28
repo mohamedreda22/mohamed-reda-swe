@@ -31,7 +31,10 @@ import {
 
 const skillGroups = [
   {
-    label: "Product Engineering",
+    label: {
+      en: "Product Engineering",
+      ar: "هندسة المنتجات",
+    },
     skills: [
       { name: "React 19", icon: faReact },
       { name: "Angular", icon: faAngular },
@@ -43,7 +46,10 @@ const skillGroups = [
     ],
   },
   {
-    label: "System Architecture",
+    label: {
+      en: "System Architecture",
+      ar: "معمارية الأنظمة",
+    },
     skills: [
       { name: "Node.js", icon: faNodeJs },
       { name: "Express.js", icon: faServer },
@@ -55,7 +61,10 @@ const skillGroups = [
     ],
   },
   {
-    label: "Engineering Operations",
+    label: {
+      en: "Engineering Operations",
+      ar: "العمليات الهندسية",
+    },
     skills: [
       { name: "Git / Version Control", icon: faGitAlt },
       { name: "CI/CD Pipelines", icon: faCodeBranch },
@@ -66,7 +75,10 @@ const skillGroups = [
     ],
   },
   {
-    label: "Future & Methodology",
+    label: {
+      en: "Future & Methodology",
+      ar: "المستقبل والمنهجيات",
+    },
     skills: [
       { name: "Generative AI", icon: faRobot },
       { name: "Python / AI Ops", icon: faPython },
