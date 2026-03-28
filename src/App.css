@@ -22,6 +22,11 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+[dir='rtl'] {
+  --font-body: "DM Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-display: "Syne", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 *,
 *::before,
 *::after {
@@ -461,6 +466,11 @@ nav {
   height: 1px;
   background: var(--accent);
 }
+
+[dir='rtl'] .section-eyebrow::before {
+  margin-left: 10px;
+  margin-right: 0;
+}
 .section-heading {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 4.5vw, 3rem);
@@ -642,6 +652,11 @@ nav {
   bottom: 0;
   width: 3px;
   background: linear-gradient(to bottom, var(--accent), rgba(224, 23, 92, 0.2));
+}
+
+[dir='rtl'] .edu-card::before {
+  left: auto;
+  right: 0;
 }
 .edu-card:hover {
   border-color: rgba(224, 23, 92, 0.22);
@@ -947,6 +962,12 @@ nav {
     rgba(224, 23, 92, 0.08) 100%
   );
 }
+
+[dir='rtl'] .tl-list::before {
+  left: auto;
+  right: 16px;
+}
+
 .tl-entry {
   display: flex;
   gap: 28px;
@@ -956,6 +977,11 @@ nav {
   transform: translateY(16px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+[dir='rtl'] .tl-entry {
+  padding: 0 52px 36px 0;
+}
+
 .tl-entry.visible {
   opacity: 1;
   transform: translateY(0);
@@ -969,6 +995,11 @@ nav {
   border-radius: 50%;
   border: 2px solid var(--bg-deep);
   z-index: 1;
+}
+
+[dir='rtl'] .tl-dot {
+  left: auto;
+  right: 8px;
 }
 .tl-dot.military {
   background: #00d4ff;
@@ -1087,6 +1118,10 @@ nav {
   background: linear-gradient(to right, var(--accent), transparent);
   opacity: 0;
   transition: opacity 0.25s;
+}
+
+[dir='rtl'] .cert-card::before {
+  background: linear-gradient(to left, var(--accent), transparent);
 }
 .cert-card:hover {
   border-color: rgba(224, 23, 92, 0.24);
