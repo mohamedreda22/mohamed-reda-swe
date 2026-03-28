@@ -1,34 +1,34 @@
 const education = [
   {
     institution: {
-      en: "Thebes Academy (Thebes Higher Institute of Engineering)",
-      ar: "أكاديمية طيبة (معهد طيبة العالي للهندسة)",
+      en: "Helwan University",
+      ar: "جامعة حلوان",
     },
     degree: {
-      en: "Bachelor of Engineering (B.E.)",
-      ar: "بكالوريوس هندسة",
+      en: "Bachelor of Computer Science",
+      ar: "بكالوريوس الحاسبات والمعلومات",
     },
     location: {
-      en: "Maadi, Cairo, Egypt",
-      ar: "المعادي، القاهرة، مصر",
+      en: "Helwan, Cairo, Egypt",
+      ar: "حلوان، القاهرة، مصر",
     },
     duration: {
-      en: "2019 – 2024",
-      ar: "2019 – 2024",
+      en: "2020 – 2024",
+      ar: "2020 – 2024",
     },
     major: {
-      en: "Communications and Electronics",
-      ar: "اتصالات وإلكترونيات",
+      en: "Computer Science",
+      ar: "علوم الحاسب",
     },
     minor: {
-      en: "Software Engineering & Embedded Systems",
-      ar: "هندسة البرمجيات والأنظمة المدمجة",
+      en: "Software Engineering",
+      ar: "هندسة البرمجيات",
     },
     gpa: {
-      en: "Cumulative Grade: Very Good (3.11)",
-      ar: "التقدير التراكمي: جيد جداً (3.11)",
+      en: "GPA: 2.84 (Very Good)",
+      ar: "المعدل التراكمي: 2.84 (تقدير جيد جداً)",
     },
-    logo: "thebes.png",
+    logo: "hu.png",
   },
 ];
 
