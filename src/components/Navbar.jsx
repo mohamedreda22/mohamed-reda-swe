@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Navbar = ({ navLinks, setMenuOpen, profile, toggleProfile }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const toggleLanguage = () => {
     const nextLang = i18n.language === "ar" ? "en" : "ar";
@@ -24,7 +24,7 @@ const Navbar = ({ navLinks, setMenuOpen, profile, toggleProfile }) => {
           onClick={toggleProfile}
           className="profile-toggle"
         >
-          {profile === "engineering" ? useTranslation().t("hero.switch_to_it", "Switch to IT Support") : useTranslation().t("hero.switch_to_eng", "Switch to Software Engineer")}
+          {profile === "engineering" ? t("hero.switch_to_it", "Switch to IT Support") : t("hero.switch_to_eng", "Switch to Software Engineer")}
         </button>
         <button
           onClick={toggleLanguage}
