@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation, Trans } from "react-i18next";
 
-const About = () => {
+const About = ({ profile }) => {
   const { t } = useTranslation();
 
   return (
@@ -15,7 +15,9 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="section-eyebrow">{t("about.eyebrow")}</div>
-          <h2 className="section-heading">{t("about.heading")}</h2>
+          <h2 className="section-heading">
+            {profile === "engineering" ? t("about.heading") : t("about.heading_it")}
+          </h2>
         </motion.div>
         <div className="about-grid">
           <motion.div
@@ -25,53 +27,87 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p>
-              <Trans i18nKey="about.p1">
-                I am a Software Engineer who treats code like a mission-critical operation. My background is defined by a unique intersection: the tactical precision of the <strong>Egyptian Border Guard</strong> and the architectural depth of modern full-stack engineering.
-              </Trans>
-            </p>
+            {profile === "engineering" ? (
+              <>
+                <p>
+                  <Trans i18nKey="about.p1">
+                    I am a Software Engineer who treats code like a mission-critical operation. My background is defined by a unique intersection: the tactical precision of the <strong>Egyptian Border Guard</strong> and the architectural depth of modern full-stack engineering.
+                  </Trans>
+                </p>
 
-            <p>
-              <Trans i18nKey="about.p2">
-                Having completed my military service in <strong>March 2026</strong>, I have transitioned back into full-time engineering with a renewed focus on building systems that don't just work—they scale. I specialize in the <strong>MERN</strong> and <strong>MEAN</strong> stacks, with a particular emphasis on <strong>React 19</strong>, <strong>Node.js</strong>, and distributed system design.
-              </Trans>
-            </p>
+                <p>
+                  <Trans i18nKey="about.p2">
+                    Having completed my military service in <strong>March 2026</strong>, I have transitioned back into full-time engineering with a renewed focus on building systems that don't just work—they scale. I specialize in the <strong>MERN</strong> and <strong>MEAN</strong> stacks, with a particular emphasis on <strong>React 19</strong>, <strong>Node.js</strong>, and distributed system design.
+                  </Trans>
+                </p>
 
-            <p>
-              <Trans i18nKey="about.p3">
-                My approach to software is holistic. I don't just 'write features'; I architect solutions. Whether it's solving the 'photo-loss' problem for thousands of event guests with <strong>YouMak</strong> or bridging the educational gap with <strong>Modarsak</strong>, my goal is always to deliver viral impact through technical excellence.
-              </Trans>
-            </p>
+                <p>
+                  <Trans i18nKey="about.p3">
+                    My approach to software is holistic. I don't just 'write features'; I architect solutions. Whether it's solving the 'photo-loss' problem for thousands of event guests with <strong>YouMak</strong> or bridging the educational gap with <strong>Modarsak</strong>, my goal is always to deliver viral impact through technical excellence.
+                  </Trans>
+                </p>
 
-            <p>
-              <Trans i18nKey="about.p4">
-                Currently, I am operating as a <strong>Freelance Full-Stack Engineer</strong>, helping startups and established businesses deploy high-performance web applications while I look for my next high-stakes engineering challenge.
-              </Trans>
-            </p>
+                <p>
+                  <Trans i18nKey="about.p4">
+                    Currently, I am operating as a <strong>Freelance Full-Stack Engineer</strong>, helping startups and established businesses deploy high-performance web applications while I look for my next high-stakes engineering challenge.
+                  </Trans>
+                </p>
+              </>
+            ) : (
+              <>
+                <p>{t("about.p1_it")}</p>
+                <p>{t("about.p2_it")}</p>
+                <p>{t("about.p3_it")}</p>
+              </>
+            )}
           </motion.div>
           <div className="about-cards">
-            {[
-              {
-                icon: "🛡️",
-                title: t("about.card1_title"),
-                desc: t("about.card1_desc"),
-              },
-              {
-                icon: "🏗️",
-                title: t("about.card2_title"),
-                desc: t("about.card2_desc"),
-              },
-              {
-                icon: "🚀",
-                title: t("about.card3_title"),
-                desc: t("about.card3_desc"),
-              },
-              {
-                icon: "🧠",
-                title: t("about.card4_title"),
-                desc: t("about.card4_desc"),
-              },
-            ].map((c, index) => (
+            {(profile === "engineering"
+              ? [
+                  {
+                    icon: "🛡️",
+                    title: t("about.card1_title"),
+                    desc: t("about.card1_desc"),
+                  },
+                  {
+                    icon: "🏗️",
+                    title: t("about.card2_title"),
+                    desc: t("about.card2_desc"),
+                  },
+                  {
+                    icon: "🚀",
+                    title: t("about.card3_title"),
+                    desc: t("about.card3_desc"),
+                  },
+                  {
+                    icon: "🧠",
+                    title: t("about.card4_title"),
+                    desc: t("about.card4_desc"),
+                  },
+                ]
+              : [
+                  {
+                    icon: "🌐",
+                    title: t("about.card1_title_it"),
+                    desc: t("about.card1_desc_it"),
+                  },
+                  {
+                    icon: "🖥️",
+                    title: t("about.card2_title_it"),
+                    desc: t("about.card2_desc_it"),
+                  },
+                  {
+                    icon: "🛠️",
+                    title: t("about.card3_title_it"),
+                    desc: t("about.card3_desc_it"),
+                  },
+                  {
+                    icon: "⚙️",
+                    title: t("about.card4_title_it"),
+                    desc: t("about.card4_desc_it"),
+                  },
+                ]
+            ).map((c, index) => (
               <motion.div
                 className="about-card"
                 key={c.title}

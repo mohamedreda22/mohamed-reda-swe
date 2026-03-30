@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Navbar = ({ navLinks, setMenuOpen }) => {
+const Navbar = ({ navLinks, setMenuOpen, profile, toggleProfile }) => {
   const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
@@ -20,6 +20,27 @@ const Navbar = ({ navLinks, setMenuOpen }) => {
             {l.label}
           </a>
         ))}
+        <button
+          onClick={toggleProfile}
+          className="profile-toggle"
+          style={{
+            background: "var(--accent)",
+            border: "none",
+            color: "white",
+            padding: "4px 12px",
+            borderRadius: "40px",
+            fontSize: "11px",
+            fontWeight: "600",
+            cursor: "pointer",
+            marginLeft: "10px",
+            transition: "all 0.25s var(--ease)",
+            boxShadow: "0 0 15px rgba(224, 23, 92, 0.3)",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px"
+          }}
+        >
+          {profile === "engineering" ? "Switch to IT Support" : "Switch to Software Engineer"}
+        </button>
         <button
           onClick={toggleLanguage}
           className="lang-toggle"

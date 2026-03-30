@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-const Hero = ({ downloadCV }) => {
+const Hero = ({ downloadCV, profile }) => {
   const { t } = useTranslation();
 
   return (
@@ -31,10 +31,10 @@ const Hero = ({ downloadCV }) => {
             <span className="accent">Reda</span>
           </h1>
           <p className="hero-role anim d3">
-            {t("hero.role")}
+            {profile === "engineering" ? t("hero.role") : t("hero.role_it")}
           </p>
           <p className="hero-bio anim d3">
-            {t("hero.bio")}
+            {profile === "engineering" ? t("hero.bio") : t("hero.bio_it")}
           </p>
           <div className="hero-mission anim d3" style={{ marginBottom: "32px" }}>
             <div
@@ -88,18 +88,37 @@ const Hero = ({ downloadCV }) => {
             </a>
           </div>
           <div className="hero-stats anim d4">
-            <div>
-              <div className="stat-num">
-                12<span>+</span>
-              </div>
-              <div className="stat-label">{t("hero.stat_deployments")}</div>
-            </div>
-            <div>
-              <div className="stat-num">
-                6<span>+</span>
-              </div>
-              <div className="stat-label">{t("hero.stat_institutions")}</div>
-            </div>
+            {profile === "engineering" ? (
+              <>
+                <div>
+                  <div className="stat-num">
+                    12<span>+</span>
+                  </div>
+                  <div className="stat-label">{t("hero.stat_deployments")}</div>
+                </div>
+                <div>
+                  <div className="stat-num">
+                    6<span>+</span>
+                  </div>
+                  <div className="stat-label">{t("hero.stat_institutions")}</div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div>
+                  <div className="stat-num">
+                    5<span>+</span>
+                  </div>
+                  <div className="stat-label">{t("hero.stat_deployments")}</div>
+                </div>
+                <div>
+                  <div className="stat-num">
+                    100<span>+</span>
+                  </div>
+                  <div className="stat-label">Users Supported</div>
+                </div>
+              </>
+            )}
             <div>
               <div className="stat-num">
                 100<span>%</span>
