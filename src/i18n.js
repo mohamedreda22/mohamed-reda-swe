@@ -38,6 +38,7 @@ i18n
             "explore_projects": "Explore Case Studies →",
             "stat_deployments": "Deployments",
             "stat_institutions": "Institutions",
+            "stat_users_supported": "Users Supported",
             "stat_mission_ready": "Mission Ready"
           },
           "about": {
@@ -139,7 +140,7 @@ i18n
           "hero": {
             "badge": "العسكري اللي بيكود 🪖",
             "role": "Staff-Level Software Engineer & Product Architect",
-            "role_it": "IT Support & Networking Specialist | Systems Troubleshooting & Automation",
+            "role_it": "متخصص دعم فني وشبكات | حل أعطال الأنظمة والأتمتة",
             "bio": "متخصص في الـ Scalable Systems، الـ Architectural Precision، والـ Viral Product Growth. بدمج الانضباط العسكري مع التميز الهندسي عشان أبني مستقبل الويب الـ High-Performance.",
             "bio_it": "متخصص في الدعم الفني والشبكات بخلفية في علوم الحاسب وخبرة عملية في الأنظمة والشبكات وحل الأعطال. ماهر في تشخيص وحل المشكلات التقنية، ودعم المستخدمين، وصيانة بيئات الهاردوير والسوفت وير.",
             "status_label": "Status:",
@@ -150,6 +151,7 @@ i18n
             "explore_projects": "شوف الـ Case Studies ←",
             "stat_deployments": "Deployments",
             "stat_institutions": "Institutions",
+            "stat_users_supported": "مستخدم تم دعمهم",
             "stat_mission_ready": "Mission Ready"
           },
           "about": {

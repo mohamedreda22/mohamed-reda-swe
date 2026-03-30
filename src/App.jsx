@@ -32,8 +32,11 @@ const App = () => {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
-    link.download = "Mohamed_Reda_Ismail_FullStack_Developer.pdf";
+    const cvFile = profile === "engineering"
+      ? "Mohamed_Reda_Ismail_FullStack_Developer.pdf"
+      : "Mohamed_Reda_IT_Support_Engineer_CV.pdf";
+    link.href = cvFile;
+    link.download = cvFile;
     link.click();
   };
 
@@ -80,6 +83,15 @@ const App = () => {
             {l.label}
           </a>
         ))}
+        <button
+          onClick={() => {
+            toggleProfile();
+            setMenuOpen(false);
+          }}
+          className="profile-toggle mobile-only"
+        >
+          {profile === "engineering" ? t("hero.switch_to_it", "Switch to IT Support") : t("hero.switch_to_eng", "Switch to Software Engineer")}
+        </button>
       </div>
 
       <Hero downloadCV={downloadCV} profile={profile} />

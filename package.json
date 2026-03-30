@@ -48,6 +48,7 @@
   "author": "Mohamed Reda",
   "devDependencies": {
     "cross-env": "^10.1.0",
+    "playwright": "^1.58.2",
     "typescript": "^4.9.5"
   }
 }

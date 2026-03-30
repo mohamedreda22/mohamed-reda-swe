@@ -100,6 +100,27 @@ nav {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.profile-toggle {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 40px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.25s var(--ease);
+  box-shadow: 0 0 15px rgba(224, 23, 92, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-toggle:hover {
+  background: #c41050;
+  transform: translateY(-1px);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -153,6 +174,28 @@ nav {
   background: none;
   border: none;
   font-family: var(--font-body);
+}
+
+.profile-toggle.mobile-only {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(224, 23, 92, 0.4);
+  transition: all 0.25s var(--ease);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.profile-toggle.mobile-only:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 768px) {
@@ -410,11 +453,15 @@ nav {
 @media (max-width: 900px) {
   .hero {
     padding: 0 24px;
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: 60px;
   }
   .hero-inner {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 0;
+    gap: 40px;
   }
   .hero-bio {
     margin: 0 auto 40px;
@@ -544,18 +591,23 @@ nav {
     grid-template-columns: 1fr;
     gap: 44px;
   }
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
   .hero {
     padding: 0 16px;
+    padding-top: 100px;
   }
   .hero-inner {
-    padding-top: 80px;
+    padding-top: 0;
   }
   .hero-name {
     font-size: clamp(1.7rem, 9vw, 2.8rem);
     letter-spacing: -0.02em;
+    margin-bottom: 10px;
   }
   .hero-role {
     font-size: 14px;
@@ -566,6 +618,7 @@ nav {
   .photo-ring {
     width: 170px;
     height: 170px;
+    margin: 0 auto;
   }
   .hero-stats {
     gap: 20px;
@@ -710,7 +763,8 @@ nav {
   .edu-card {
     flex-direction: column;
     text-align: center;
-    padding: 36px 28px;
+    padding: 32px 20px;
+    gap: 20px;
   }
   .edu-card::before {
     width: 100%;
@@ -879,6 +933,7 @@ nav {
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
   .project-card.hero-card {
     flex-direction: column;
@@ -1079,10 +1134,15 @@ nav {
 
 @media (max-width: 600px) {
   .tl-entry {
-    padding-left: 40px;
+    padding: 0 0 30px 40px;
+    gap: 20px;
+  }
+  [dir='rtl'] .tl-entry {
+    padding: 0 40px 30px 0;
   }
   .tl-head {
     flex-direction: column;
+    align-items: flex-start;
   }
   .exp-bg .section-wrap {
     padding-left: 24px;

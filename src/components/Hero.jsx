@@ -115,7 +115,7 @@ const Hero = ({ downloadCV, profile }) => {
                   <div className="stat-num">
                     100<span>+</span>
                   </div>
-                  <div className="stat-label">Users Supported</div>
+                  <div className="stat-label">{t("hero.stat_users_supported")}</div>
                 </div>
               </>
             )}
