@@ -14,6 +14,10 @@ const projects = [
       en: "A premium event photo-sharing platform tailored for the Egyptian market, enabling instant QR-based sharing for weddings, graduations, and celebrations without an app.",
       ar: "منصة فاخرة لمشاركة صور المناسبات مصممة للسوق المصري، بتسمح بالمشاركة الفورية عن طريق الـ QR في الأفراح والتخرج والحفلات من غير App.",
     },
+    itDesc: {
+      en: "Supported real-time user connectivity and handled media upload issues. Optimized system performance and reduced latency. Worked with cloud services and content delivery systems.",
+      ar: "دعم اتصال المستخدمين في الوقت الفعلي ومعالجة مشكلات رفع الوسائط. تحسين أداء النظام وتقليل التأخير. العمل مع الخدمات السحابية وأنظمة توصيل المحتوى.",
+    },
     stack: [
       "React 19",
       "Tailwind CSS",
@@ -64,6 +68,10 @@ const projects = [
     desc: {
       en: "A centralized EdTech marketplace connecting independent Egyptian tutors with students, streamlining the private education ecosystem.",
       ar: "سوق EdTech مركزي بيوصل المدرسين الخصوصيين المصريين بالطلاب، وبينظم منظومة التعليم الخاص.",
+    },
+    itDesc: {
+      en: "Managed user authentication and access control systems. Handled API integrations and system reliability. Diagnosed and resolved real-time production issues.",
+      ar: "إدارة أنظمة توثيق المستخدم والتحكم في الوصول. التعامل مع تكاملات الـ API وموثوقية النظام. تشخيص وحل مشكلات الإنتاج في الوقت الفعلي.",
     },
     stack: ["React", "Firebase", "Node.js", "Tailwind CSS", "Redux Toolkit"],
     github: null,

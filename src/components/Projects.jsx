@@ -155,7 +155,7 @@ const CaseStudyModal = ({ project, isOpen, onClose }) => {
   );
 };
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index, profile }) => {
   const [imgIdx, setImgIdx] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t, i18n } = useTranslation();
@@ -172,7 +172,9 @@ const ProjectCard = ({ project, index }) => {
 
   const projectName = project.name[currentLang] || project.name.en;
   const projectDate = project.date[currentLang] || project.date.en;
-  const projectDesc = project.desc[currentLang] || project.desc.en;
+  const projectDesc = profile === "it" && project.itDesc
+    ? (project.itDesc[currentLang] || project.itDesc.en)
+    : project.desc[currentLang] || project.desc.en;
 
   return (
     <>
@@ -250,7 +252,7 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects, profile }) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -269,8 +271,10 @@ const Projects = ({ projects }) => {
           </p>
         </motion.div>
         <div className="projects-grid">
-          {projects.map((p, index) => (
-            <ProjectCard key={p.id || p.name.en} project={p} index={index} />
+          {projects
+            .filter(p => profile === "engineering" || p.itDesc)
+            .map((p, index) => (
+            <ProjectCard key={p.id || p.name.en} project={p} index={index} profile={profile} />
           ))}
         </div>
       </div>

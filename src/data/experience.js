@@ -56,7 +56,12 @@ const experiences = [
       en: "Intensive MEAN-stack training covering advanced JavaScript, web security, SEO, and freelancing modules.",
       ar: "تدريب مكثف على MEAN-stack شمل Advanced JavaScript، و Web Security، و SEO، ووحدات عن الـ Freelancing.",
     },
+    itDesc: {
+      en: "Built full-stack applications with focus on debugging and system reliability. Hands-on experience supporting PCs, laptops, and workstations for performance issues.",
+      ar: "بنيت تطبيقات full-stack مع التركيز على التصحيح وموثوقية النظام. خبرة عملية في دعم أجهزة الكمبيوتر واللاب توب ومحطات العمل لمشاكل الأداء.",
+    },
     skills: ["MongoDB", "Angular", "Node.js", "Express.js"],
+    itSkills: ["PC Support", "Laptop Maintenance", "Workstation Troubleshooting", "System Reliability"],
   },
   {
     title: {
@@ -95,7 +100,12 @@ const experiences = [
       en: "Advanced MEAN stack development collaboration between Orange Digital Center and AMIT Learning.",
       ar: "تطوير Advanced MEAN stack بالتعاون بين Orange Digital Center و AMIT Learning.",
     },
+    itDesc: {
+      en: "Diagnosed and resolved system & application issues, improving uptime. Provided troubleshooting support for Microsoft 365 & Microsoft Office and user hardware issues.",
+      ar: "تشخيص وحل مشكلات الأنظمة والتطبيقات، مما أدى إلى تحسين وقت التشغيل. تقديم دعم استكشاف الأخطاء وإصلاحها لـ Microsoft 365 و Microsoft Office ومشكلات أجهزة المستخدم.",
+    },
     skills: ["MongoDB", "AngularJS", "TypeScript", "Express.js", "Node.js"],
+    itSkills: ["System Troubleshooting", "Microsoft 365", "Hardware Support", "Network Protocols"],
   },
   {
     title: {

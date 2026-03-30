@@ -27,6 +27,7 @@ import {
   faMicrochip,
   faCogs,
   faProjectDiagram,
+  faTerminal,
 } from "@fortawesome/free-solid-svg-icons";
 
 const skillGroups = [
@@ -86,6 +87,59 @@ const skillGroups = [
       { name: "Large Scale Systems", icon: faMicrochip },
       { name: "Performance Optimization", icon: faCogs },
       { name: "Jira / Collaboration", icon: faJira },
+    ],
+  },
+];
+
+export const itSkillGroups = [
+  {
+    label: {
+      en: "Networking",
+      ar: "الشبكات",
+    },
+    skills: [
+      { name: "TCP/IP", icon: faProjectDiagram },
+      { name: "DNS / DHCP", icon: faServer },
+      { name: "Subnetting", icon: faCogs },
+      { name: "Routing & Switching", icon: faExchangeAlt },
+      { name: "Network Troubleshooting", icon: faVial },
+    ],
+  },
+  {
+    label: {
+      en: "Operating Systems",
+      ar: "أنظمة التشغيل",
+    },
+    skills: [
+      { name: "Windows Support", icon: faDesktop },
+      { name: "Linux (Ubuntu/Bash)", icon: faTerminal },
+      { name: "System Administration", icon: faCogs },
+      { name: "Remote Desktop", icon: faLaptopCode },
+    ],
+  },
+  {
+    label: {
+      en: "Hardware & Support",
+      ar: "الأجهزة والدعم",
+    },
+    skills: [
+      { name: "PC/Laptop Assembly", icon: faMicrochip },
+      { name: "Hardware Maintenance", icon: faCogs },
+      { name: "System Diagnostics", icon: faVial },
+      { name: "End-User Support", icon: faTasks },
+    ],
+  },
+  {
+    label: {
+      en: "Tools & Software",
+      ar: "الأدوات والبرامج",
+    },
+    skills: [
+      { name: "Microsoft 365", icon: faEnvelope },
+      { name: "Autodesk Systems", icon: faCubes },
+      { name: "Git / Version Control", icon: faGitAlt },
+      { name: "Remote Support Tools", icon: faLaptopCode },
+      { name: "CMD / Bash / PowerShell", icon: faTerminal },
     ],
   },
 ];
